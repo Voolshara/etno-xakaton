@@ -9,7 +9,7 @@
     <el-col :span="12"><div class="etno-name">Этно-Xakaton</div></el-col>
     <el-col :span="3" :push="2">
       <el-button class="nav-button" @click="open">
-        <el-icon :size="40" :color="'#409eff'"
+        <el-icon :size="40" :color="'#4EB9DB'"
           ><svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 1024 1024"

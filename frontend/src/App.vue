@@ -1,18 +1,22 @@
 <template>
   <el-container id="app">
     <el-header><NavEl /></el-header>
-    <el-main>Router</el-main>
+    <el-main>
+      <BG style="position: absolute" />
+      <div>Router</div>
+    </el-main>
     Footer
   </el-container>
 </template>
 
 <script>
 import NavEl from "@/components/nav/nav.vue";
-
+import BG from "@/components/particle.vue";
 export default {
   name: "App",
   components: {
     NavEl,
+    BG,
   },
 };
 </script>
