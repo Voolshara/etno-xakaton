@@ -2,10 +2,9 @@
   <el-container id="app">
     <el-header><NavEl /></el-header>
     <el-main>
-      <BG style="position: absolute" />
-      <div>Router</div>
+      <BG class="background" />
+      <router-view />
     </el-main>
-    Footer
   </el-container>
 </template>
 
@@ -29,5 +28,9 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+}
+
+.background {
+  position: absolute;
 }
 </style>
