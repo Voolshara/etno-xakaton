@@ -2,16 +2,17 @@
   <div>
     <Carousel />
     <Anounce />
+    <About/>
   </div>
 </template>
 
 <script>
-import Carousel from "@/components/main_page/carousel.vue";
 import Anounce from "@/components/main_page/anounce.vue";
+import About from "@/components/main_page/about.vue"
 export default {
   components: {
-    Carousel,
     Anounce,
+    About,
   },
 };
 </script>
