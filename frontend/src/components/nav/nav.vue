@@ -70,6 +70,7 @@ export default {
   align-items: center;
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1), 0 0;
   margin-bottom: 7px;
+  z-index: 1000;
 }
 .etno-name {
   font-size: 35px;
