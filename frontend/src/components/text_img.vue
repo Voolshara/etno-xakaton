@@ -32,6 +32,7 @@ export default {
         this.text_var = this.text;
         this.is_close = false;
         this.arrow_button = "rotate-arrow";
+        //pass
       } else {
         this.text_var = this.label;
         this.is_close = true;
