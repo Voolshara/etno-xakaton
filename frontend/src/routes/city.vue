@@ -15,20 +15,6 @@
       О школе
       <div class="cards-container">
         <text_img_left :text="two" :img="'/img/naash.jpg'" :label="one" />
-        <text_img_left :text="two" :img="'/img/naash.jpg'" :label="one" />
-        <text_img_left :text="two" :img="'/img/naash.jpg'" :label="one" />
-        <text_img_left :text="two" :img="'/img/naash.jpg'" :label="one" />
-        <text_img_left :text="two" :img="'/img/naash.jpg'" :label="one" />
-        <text_img_left :text="two" :img="'/img/naash.jpg'" :label="one" />
-        <text_img_left :text="two" :img="'/img/naash.jpg'" :label="one" />
-        <text_img_left :text="two" :img="'/img/naash.jpg'" :label="one" />
-        <text_img_left :text="two" :img="'/img/naash.jpg'" :label="one" />
-        <text_img_left :text="two" :img="'/img/naash.jpg'" :label="one" />
-        <text_img_left :text="two" :img="'/img/naash.jpg'" :label="one" />
-        <text_img_left :text="two" :img="'/img/naash.jpg'" :label="one" />
-        <text_img_left :text="two" :img="'/img/naash.jpg'" :label="one" />
-        <text_img_left :text="two" :img="'/img/naash.jpg'" :label="one" />
-        <text_img_left :text="two" :img="'/img/naash.jpg'" :label="one" />
         <div class="hidden-text">{{ two }}</div>
       </div>
     </div>
