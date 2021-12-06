@@ -80,6 +80,9 @@ export default {
 </script>
 
 <style scoped>
+.particles {
+  z-index: -1;
+}
 #particles-js {
   position: relative;
 }

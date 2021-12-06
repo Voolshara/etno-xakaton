@@ -23,6 +23,7 @@ export default {
 <style>
 @import url("https://fonts.googleapis.com/css2?family=Caveat:wght@500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap");
 #app {
   font-family: "Caveat", cursive;
   -webkit-font-smoothing: antialiased;
