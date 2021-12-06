@@ -31,9 +31,12 @@ export default {
         {
           img: "/img/nijniy-novgorod.jpg",
           name: "Нижний Новгород",
-          link: "Nij",
+          link: "Нижний Новгород",
         },
-        { img: "/img/nijniy-novgorod.jpg", name: "Нижний Новгород", link: "5" },
+        { img: "/img/nijniy-novgorod.jpg", 
+          name: "Нижний Новгород", 
+          link: "5" 
+          },
         { img: "/img/nijniy-novgorod.jpg", name: "Нижний Новгород", link: "5" },
         { img: "/img/nijniy-novgorod.jpg", name: "Нижний Новгород", link: "5" },
         { img: "/img/nijniy-novgorod.jpg", name: "Нижний Новгород", link: "5" },
