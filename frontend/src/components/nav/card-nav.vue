@@ -2,10 +2,15 @@
   <div class="nav-card">
     <el-card class="nav-card-el">
       <div v-for="element in menu" :key="element" class="all-items">
-        <div class="item">
-          <el-image class="menu-img" :src="element['img']"></el-image>
-          <div class="menu-text">{{ element["text"] }}</div>
-        </div>
+        <router-link
+          :to="element['link']"
+          style="text-decoration: none; color: black"
+        >
+          <div class="item">
+            <el-image class="menu-img" :src="element['img']"></el-image>
+            <div class="menu-text">{{ element["text"] }}</div>
+          </div>
+        </router-link>
       </div>
     </el-card>
   </div>
@@ -16,10 +21,10 @@ export default {
   data() {
     return {
       menu: [
-        { img: "/img/house.png", text: "Главная" },
-        { img: "/img/map.png", text: "Города" },
-        { img: "/img/person.png", text: "О нас" },
-        { img: "/img/book.png", text: "Наша школа" },
+        { img: "/img/house.png", text: "Главная", link: "/" },
+        { img: "/img/map.png", text: "Города", link: "/" },
+        { img: "/img/person.png", text: "О нас", link: "/" },
+        { img: "/img/book.png", text: "Наша школа", link: "/" },
       ],
     };
   },
