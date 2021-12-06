@@ -33,14 +33,10 @@ export default {
           name: "Нижний Новгород",
           link: "Нижний Новгород",
         },
-        { img: "/img/nijniy-novgorod.jpg", 
-          name: "Нижний Новгород", 
-          link: "5" 
-          },
-        { img: "/img/nijniy-novgorod.jpg", name: "Нижний Новгород", link: "5" },
-        { img: "/img/nijniy-novgorod.jpg", name: "Нижний Новгород", link: "5" },
-        { img: "/img/nijniy-novgorod.jpg", name: "Нижний Новгород", link: "5" },
-        { img: "/img/nijniy-novgorod.jpg", name: "Нижний Новгород", link: "5" },
+        { img: "/img/kazan.png", name: "Казань", link: "Казань" },
+        { img: "/img/saransk.png", name: "Саранск", link: "Саранск" },
+        { img: "/img/esharala.png", name: "Йошкар-Ола", link: "Йошкар-Ола" },
+        { img: "/img/sviajsk.png", name: "Свияжск", link: "Свияжск" },
       ],
     };
   },
