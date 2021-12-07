@@ -41,12 +41,19 @@ export default {
       setTimeout(() => {
         this.cardClass = "card-close animate__animated animate__bounceOutRight";
       }, 3000);
+      setTimeout(() => {
+        this.cardClass = "display-none";
+      }, 3600);
     },
   },
 };
 </script>
 
 <style scoped>
+.display-none {
+  display: none;
+}
+
 .card-closed {
   display: none;
 }
