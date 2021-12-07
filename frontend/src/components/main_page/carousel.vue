@@ -31,7 +31,7 @@ export default {
         {
           img: "/img/nijniy-novgorod.jpg",
           name: "Нижний Новгород",
-          link: "Нижний Новгород",
+          link: "nizhny",
         },
         { img: "/img/kazan.png", name: "Казань", link: "Казань" },
         { img: "/img/saransk.png", name: "Саранск", link: "Саранск" },

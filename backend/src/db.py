@@ -69,6 +69,8 @@ class DB_get:
         with create_session() as session:
             id_article = session.query(Articles).filter(
                     Articles.router == router).one_or_none()
+            if id_article is None:
+                return
             all_cards = session.query(Cards_Bind).filter(
                 Cards_Bind.article_id == id_article.id
             ).all()
@@ -141,7 +143,7 @@ class DB_new:
     def create_all_tables(self):
         Base.metadata.create_all(engine)
 
-DBN = DB_new()
+# DBN = DB_new()
 # DBN.create_all_tables()
 # DBN.create_new_article("Нижний Новгород", "/nizhny")
 # DBN.add_new_card_to_article(

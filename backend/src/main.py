@@ -5,7 +5,7 @@ from src.db import DB_get
 
 app = Flask(__name__)
 CORS(app, resources={
-    r"/arcticle_data/*": {"origins": "*"},
+    r"/arcticle_data*": {"origins": "*"},
     }) # настройка CORS POLICY
 app.config['CORS_HEADERS'] = 'Access-Control-Allow-Origin'
 
@@ -14,10 +14,17 @@ runner = Typer()
 
 @app.route('/arcticle_data', methods=['POST'])  # роут сборки шаблонов
 def filters():
-    data = DBG.get_data_for_article("/nizhny")
+    data = DBG.get_data_for_article("/" + request.json['router'])
+    if data is None:
+        return {
+            "meta" : {
+                "status" : "error"
+            }
+            }
     return {
     "meta": {
         "len" : len(data),
+        "status" : "OK"
     },
     "data":data
     }
