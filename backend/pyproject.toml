@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "backend"
+version = "0.1.0"
+description = ""
+authors = ["Stanislove <sta-tun-slav@yandex.ru>"]
+packages = [
+    { include = "./src" },
+]
+
+
+[tool.poetry.dependencies]
+python = "^3.10"
+SQLAlchemy = "^1.4.27"
+python-dotenv = "^0.19.2"
+psycopg2 = "^2.9.2"
+Flask = "^2.0.2"
+typer = "^0.4.0"
+Flask-Cors = "^3.0.10"
+
+[tool.poetry.dev-dependencies]
+
+[tool.poetry.scripts]
+run_server = "src.main:runner"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
