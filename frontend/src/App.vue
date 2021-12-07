@@ -1,7 +1,7 @@
 <template>
   <el-container id="app">
     <el-header><NavEl /></el-header>
-    <el-main style="--el-main-padding: 15px">
+    <el-main style="--el-main-padding: 15px" class="test">
       <BG class="background" />
       <router-view />
     </el-main>
