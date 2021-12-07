@@ -54,7 +54,7 @@ export default {
         {
           img: "/img/nijniy-novgorod.jpg",
           name: "Нижний Новгород",
-          link: "Нижний Новгород",
+          link: "nizhny",
           description: "1",
         },
         {

@@ -43,7 +43,7 @@ export default {
       }, 3000);
       setTimeout(() => {
         this.cardClass = "display-none";
-      }, 3600);
+      }, 3500);
     },
   },
 };
@@ -80,6 +80,6 @@ export default {
   z-index: 1000;
 }
 .etno-name {
-  font-size: 35px;
+  font-size: min(8vw, 40px);
 }
 </style>
