@@ -86,7 +86,7 @@ export default {
 #particles-js {
   position: relative;
 }
-@media only screen and (max-device-width: 480px) {
+@media only screen and (max-device-width: 4000px) {
   #particles-js {
     position: relative;
     height: 100vh;

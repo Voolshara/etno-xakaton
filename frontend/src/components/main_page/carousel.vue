@@ -67,4 +67,12 @@ export default {
 .carousel:last-child {
   padding-right: -30px;
 }
+@media screen and (min-width: 700px) {
+  .carousel {
+    z-index: 20;
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 0;
+  }
+}
 </style>
