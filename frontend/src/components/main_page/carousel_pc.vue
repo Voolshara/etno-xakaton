@@ -60,7 +60,7 @@ export default {
         {
           img: "/img/kazan.png",
           name: "Казань",
-          link: "Казань",
+          link: "kazan",
           description: "2",
         },
         {

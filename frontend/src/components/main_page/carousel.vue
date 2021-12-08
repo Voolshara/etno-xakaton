@@ -29,11 +29,11 @@ export default {
     return {
       carousel_data: [
         {
-          img: "/img/nijniy-novgorod.jpg",
+          img: "/img/nijniy.jpg",
           name: "Нижний Новгород",
           link: "nizhny",
         },
-        { img: "/img/kazan.png", name: "Казань", link: "Казань" },
+        { img: "/img/kazan.png", name: "Казань", link: "/kazan" },
         { img: "/img/saransk.png", name: "Саранск", link: "Саранск" },
         { img: "/img/esharala.png", name: "Йошкар-Ола", link: "Йошкар-Ола" },
         { img: "/img/sviajsk.png", name: "Свияжск", link: "Свияжск" },
