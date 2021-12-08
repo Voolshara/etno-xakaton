@@ -4,11 +4,7 @@
     v-on:click="click_button"
     class="ti_element"
   >
-    <el-image
-      :src="img"
-      :fit="'cover'"
-      class="element_image"
-    ></el-image>
+    <el-image :src="img" :fit="'cover'" class="element_image"></el-image>
     <div :class="active_class">{{ text_var }}</div>
     <Down_arrow :class="arrow_button" />
   </el-card>
@@ -58,29 +54,26 @@ export default {
     text-align: left;
     padding-left: 10px;
     padding-right: 10px;
-    font-size: 15px;
-    line-height: 17px;
     font-family: "Comfortaa", cursive;
     margin-bottom: 10px;
     margin-top: 10px;
     // 1px solid var(--el-border-color-base);
+    width: -webkit-fill-available;
   }
 
   .element_text_header {
     text-align: left;
     padding-left: 10px;
     padding-right: 10px;
-    font-size: 25px;
-    line-height: 17px;
-    font-family: "Comfortaa", cursive;
+    font-size: 30px;
+    font-family: Fantasy, cursive;
     margin-bottom: 2px;
     margin-top: 15px;
     // 1px solid var(--el-border-color-base);
   }
 
   width: 100%;
-  display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   margin: 10px 0;
 }
@@ -93,5 +86,22 @@ export default {
 .no-rotate-arrow {
   transform: rotate(0deg);
   border-top: 0px;
+}
+@media screen and (min-width: 650px) {
+  .element_image {
+    width: 50%;
+    height: min-content;
+  }
+  .el-card__body {
+    display: flex;
+    margin: 10px 0;
+  }
+  .element_text {
+    width: -webkit-fill-available;
+  }
+
+  .element_text_header {
+    width: -webkit-fill-available;
+  }
 }
 </style>

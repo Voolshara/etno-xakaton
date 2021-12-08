@@ -1,6 +1,6 @@
 <template>
   <div class="nav-card">
-    <el-card class="nav-card-el">
+    <el-card class="nav-card-el" :body-style="{ display: 'block' }">
       <div v-for="element in menu" :key="element" class="all-items">
         <router-link
           :to="element['link']"

@@ -6,7 +6,11 @@
         :src="'/img/horse.jpg'"
       ></el-image
     ></el-col>
-    <el-col :span="12"><div class="etno-name">Этно-Xakaton</div></el-col>
+    <el-col :span="12"
+      ><router-link to="/" style="text-decoration: none; color: black"
+        ><div class="etno-name">Этно-Xakaton</div></router-link
+      ></el-col
+    >
     <el-col :span="3" :push="2">
       <el-button class="nav-button" @click="open">
         <el-icon :size="40" :color="'#4EB9DB'"
