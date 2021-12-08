@@ -84,6 +84,14 @@ export default {
   font-size: 30px;
 }
 
+.cards-container {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  font-size: 20px;
+  margin: 5vh auto;
+}
+
 .container {
   .p {
     font-size: 40px;
@@ -99,7 +107,8 @@ export default {
   }
 
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
+  flex-wrap: wrap;
 }
 </style>
