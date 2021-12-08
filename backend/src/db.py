@@ -38,6 +38,15 @@ def create_session(**kwargs):
         new_session.close()
 
 
+class Authors(Base):
+    __tablename__ = 'authors'
+    id = sa.Column(sa.Integer, primary_key=True)
+    name = sa.Column(sa.String())
+    instagram = sa.Column(sa.String())
+    vk = sa.Column(sa.String())
+    photo = sa.Column(sa.String())
+
+
 class Cards(Base):
     __tablename__ = 'cards'
     id = sa.Column(sa.Integer, primary_key=True)
@@ -45,6 +54,7 @@ class Cards(Base):
     full_text = sa.Column(sa.String())
     img = sa.Column(sa.String())
     link = sa.Column(sa.String())
+    author_id = sa.Column(sa.Integer(), sa.ForeignKey(Authors.id))
 
 
 class Articles(Base):
@@ -90,9 +100,17 @@ class DB_get:
                 })
             return cards_data
 
+    def get_author_id(self, name):
+        with create_session() as session:
+            author = session.query(Authors).filter(
+                    Authors.name == name).one_or_none()
+            if author is None:
+                return None
+            return author.id 
+
 class DB_new:
     def __init__(self) -> None:
-        pass
+        self.DBS = DB_get()
 
     def bind_card(self, id_article, id_card, type="simple-card"):
         with create_session() as session:
@@ -105,8 +123,24 @@ class DB_new:
                 type = type,
             ))
 
-    def add_new_card_to_article(self, router, label, full_text, img, link, type):
+    def create_new_author(self, name, instagram, vk, photo):
         with create_session() as session:
+            session.add(Authors(
+                name=name,
+                instagram=instagram,
+                vk=vk,
+                photo=photo,
+            ))
+
+    def add_new_card_to_article(self, router, label, full_text, img, link, type, author_name):
+        with create_session() as session:
+            if author_name is None:
+                author_id = None
+            else:
+                author_id = self.DBS.get_author_id(author_name)
+                if author_id is None:
+                    self.create_new_author(author_name, "", "", "")
+                author_id = self.DBS.get_author_id(author_name)
             id_article = session.query(Articles).filter(
                 Articles.router == router).one_or_none()
             if id_article is None:
@@ -114,23 +148,25 @@ class DB_new:
                 return
             id_article = id_article.id
             id_card = self.crete_new_card(
-                label, full_text, img, link
+                label, full_text, img, link, author_id
             )
             self.bind_card(id_article, id_card, type)
 
-    def crete_new_card(self, label, full_text, img, link):
+    def crete_new_card(self, label, full_text, img, link, author_id):
         with create_session() as session:
             session.add(Cards(
                 label=label,
                 full_text=full_text,
                 img=img,
-                link=link
+                link=link,
+                author_id=author_id
             ))
             return session.query(Cards).filter(and_(
                 Cards.full_text == full_text),
                 Cards.label == label, 
                 Cards.img == img,
-                Cards.link == link
+                Cards.link == link,
+                Cards.author_id == author_id
                 ).first().id
 
     def create_new_article(self, name, router):
@@ -142,15 +178,3 @@ class DB_new:
 
     def create_all_tables(self):
         Base.metadata.create_all(engine)
-
-# DBN = DB_new()
-# DBN.create_all_tables()
-# DBN.create_new_article("Нижний Новгород", "/nizhny")
-# DBN.add_new_card_to_article(
-#     "/nizhny",
-#     "Hi", 
-#     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae doloremque velit esse fugiat aperiam possimus nostrum id excepturi eaque a inventore assumenda voluptate eum quam, beatae animi enim cupiditate maxime reiciendis ex distinctio earum placeat ut perspiciatis. Enim vitae facere corrupti repudiandae rem esse qui ea sit magni, ullam dolore.",
-#     "/img/horse.jpg",
-#     "",
-#     "left-img"
-#     )

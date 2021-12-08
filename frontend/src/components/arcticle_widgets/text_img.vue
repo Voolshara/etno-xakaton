@@ -5,7 +5,7 @@
     class="ti_element"
   >
     <el-image
-      :src="'/img/thread.jpg'"
+      :src="img"
       :fit="'cover'"
       class="element_image"
     ></el-image>
