@@ -32,7 +32,7 @@ export default {
   },
   methods: {
     get_data_for_article: function (router) {
-      fetch("http://engine.etno-xakaton.ru/arcticle_data", {
+      fetch("https://engine.etno-xakaton.ru/arcticle_data", {
         method: "POST", // *GET, POS  T, PUT, DELETE, etc.
         mode: "cors", // no-cors, *cors, same-origin
         cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
