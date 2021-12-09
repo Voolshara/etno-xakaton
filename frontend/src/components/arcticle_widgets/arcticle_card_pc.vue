@@ -6,6 +6,65 @@
       :rows="25"
     />
     <div v-else>
+      <section
+        class="hero-banner"
+        :style="{
+          backgroundImage: `url('/img/nizhny-pre.jpeg')`,
+        }"
+      >
+        <div class="text-center">
+          <span class="hero-banner-icon"
+            ><img src="/img/nizhny-gerb.png"
+          /></span>
+          <h1>Нижний Новгород</h1>
+        </div>
+      </section>
+      <section class="section-padding--small bg-gray">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6 align-self-center mb-5 mb-lg-0">
+              <div class="innovative-wrapper">
+                <h3 class="primary-text">
+                  Innovative With Experience <br class="d-none d-xl-block" />
+                  UX Design 2019
+                </h3>
+                <p class="h4 primary-text2 mb-3">
+                  Where The business World Meets
+                </p>
+                <p>
+                  Morning steas great earth for divide our good sixth called
+                  abunda itseld appear fisrd seaton upon above may bearing all
+                  moveth morning make subdue stars they are a goreat eart divide
+                  our good sixth one of that
+                </p>
+              </div>
+            </div>
+            <div class="col-lg-6 pl-xl-5">
+              <ul class="clockdiv text-center" id="clockdiv">
+                <li class="clockdiv-single clockdiv-day">
+                  <h1 class="days">320</h1>
+                  <span class="smalltext">Days</span>
+                </li>
+                <li class="clockdiv-single clockdiv-hour">
+                  <h1 class="hours">30</h1>
+                  <span class="smalltext">Hours</span>
+                </li>
+                <li class="clockdiv-single clockdiv-minute">
+                  <h1 class="minutes">30</h1>
+                  <span class="smalltext">Mins</span>
+                </li>
+              </ul>
+
+              <div class="clockdiv-content text-center">
+                <p class="h4 primary-text2 mb-2">
+                  January 20 -22, 2019 in Buffelo City
+                </p>
+                <a class="button button-link" href="#">Get Ticket</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       <el-carousel indicator-position="none" height="50vw">
         <el-carousel-item
           v-for="element in arcticle_data"
@@ -132,5 +191,129 @@ export default {
 
 .el-carousel__item:nth-child(2n + 1) {
   background-color: #ffffff;
+}
+
+.hero-banner {
+  position: relative;
+  padding: 70px 0;
+  background-size: cover;
+  margin: 0 -15px 0 -15px;
+}
+
+@media (min-width: 768px) {
+  .hero-banner {
+    padding: 200px 0;
+  }
+}
+
+@media (min-width: 1200px) {
+  .hero-banner {
+    padding: 240px 0;
+  }
+}
+
+.hero-banner-sm {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+@media (min-width: 992px) {
+  .hero-banner-sm {
+    padding-top: 170px;
+    padding-bottom: 170px;
+  }
+}
+
+.hero-banner h1 {
+  color: #fff;
+  margin-bottom: 25px;
+  font-size: 28px;
+}
+
+@media (min-width: 768px) {
+  .hero-banner h1 {
+    font-size: 60px;
+    margin-bottom: 45px;
+  }
+}
+
+.hero-banner h2 {
+  font-size: 22px;
+  color: #fff;
+  text-transform: uppercase;
+  margin-bottom: 0;
+}
+
+@media (min-width: 768px) {
+  .hero-banner h2 {
+    font-size: 42px;
+  }
+}
+
+.hero-banner-icon {
+  color: #fff;
+  display: inline-block;
+}
+
+@media (min-width: 768px) {
+  .hero-banner-icon {
+    margin-bottom: 10px;
+  }
+}
+
+.hero-banner-icon i,
+.hero-banner-icon span {
+  font-size: 35px;
+}
+
+@media (min-width: 768px) {
+  .hero-banner-icon i,
+  .hero-banner-icon span {
+    font-size: 60px;
+  }
+}
+
+.hero-banner-icon [class^="flaticon-"]:before,
+.hero-banner-icon [class*=" flaticon-"]:before,
+.hero-banner-icon [class^="flaticon-"]:after,
+.hero-banner-icon [class*=" flaticon-"]:after {
+  font-size: 35px;
+}
+
+@media (min-width: 768px) {
+  .hero-banner-icon [class^="flaticon-"]:before,
+  .hero-banner-icon [class*=" flaticon-"]:before,
+  .hero-banner-icon [class^="flaticon-"]:after,
+  .hero-banner-icon [class*=" flaticon-"]:after {
+    font-size: 60px;
+  }
+}
+
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.text-center {
+  text-align: center !important;
+  font-family: "Roboto", sans-serif;
+}
+.hero-banner p {
+  font-size: 22px;
+  color: #fff;
+  margin-bottom: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+.section-padding--small {
+  padding: 50px 0;
+}
+
+@media (min-width: 992px) {
+  .section-padding--small {
+    padding: 100px 0;
+  }
 }
 </style>
