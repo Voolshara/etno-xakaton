@@ -13,22 +13,24 @@ DBG = DB_get()
 runner = Typer()
 
 @app.route('/arcticle_data', methods=['POST'])  # роут сборки шаблонов
-def filters():
-    data = DBG.get_data_for_article("/" + request.json['router'])
+def arcticle():
+    # data = DBG.get_data_for_article("/" + request.json['router'])
+    data = DBG.get_data_for_article("/kazan")
     if data is None:
         return {
             "meta" : {
                 "status" : "error"
             }
-            }
-    return {
-    "meta": {
-        "len" : len(data),
-        "status" : "OK"
-    },
-    "data":data
-    }
+        }
+    data["meta"] = {"len" : len(data["parts"])}
+    return data
+
+
+@app.route('/carousel_dara', methods=['POST'])  # роут сборки шаблонов
+def carousel_dara():
+    data = DBG.get_data_for_article("/" + request.json['router'])
+
 
 @runner.command()
 def runner():
-    app.run(host="localhost", port="4600") # запуск сервера
+    app.run(host="localhost", port="4600") # запуск сервераp
