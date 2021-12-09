@@ -59,7 +59,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .author img {
   width: 80px;
   height: 80px;

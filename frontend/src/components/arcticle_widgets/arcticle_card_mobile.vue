@@ -1,39 +1,33 @@
 <template>
-  <div>
+  <div class="container">
     <div v-if="is_error == true" class="error-code">404</div>
     <el-skeleton
       v-else-if="is_error == false && arcticle_data.length == 0"
       :rows="25"
     />
-    <div v-else>
-      <el-carousel indicator-position="none" height="50vw">
-        <el-carousel-item
-          v-for="element in arcticle_data"
-          :key="element"
-          pause-on-hover="true"
-        >
-          <div class="cards-container">
-            <Main_text
-              :text="this.lorem200"
-              :img="element['img']"
-              :label="element['label']"
-            />
-          </div>
-        </el-carousel-item>
-      </el-carousel>
+    <div
+      v-else
+      v-for="element in arcticle_data"
+      :key="element"
+      class="cards-container"
+    >
+      <Main_text
+        :text="element['full_text']"
+        :img="element['img']"
+        :label="element['label']"
+      />
     </div>
   </div>
 </template>
 
 <script>
-import Main_text from "@/components/arcticle_widgets/main_text.vue";
+import Main_text from "@/components/arcticle_widgets/text_img.vue";
+
 export default {
   data() {
     return {
       arcticle_data: [],
       is_error: false,
-      lorem200:
-        "lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi odio molestias nemo nostrum sit dolorem blanditiis sed, voluptas eaque dolor veritatis sapiente, consectetur veniam reiciendis ea nobis velit molestiae, amet iste ab modi debitis adipisci corrupti corporis. Repellat, possimus hic adipisci eum tempora neque. Iusto assumenda iure mollitia sint vero laudantium repudiandae numquam consequuntur repellendus accusamus voluptate ex ullam molestiae temporibus minus, pariatur neque impedit. Impedit sed amet, temporibus saepe consectetur magni corrupti facere provident at pariatur, officiis laborum porro enim labore nemo molestias necessitatibus, perspiciatis quod aut ex. Fugiat obcaecati est vel vitae deserunt! Sunt ipsum deleniti eos! Recusandae numquam voluptatem deserunt ducimus dolorem harum esse reiciendis sequi ut beatae rerum sunt molestiae ipsum nihil ab nesciunt magnam nemo ea totam obcaecati assumenda praesentium, saepe, molestias illum! Nihil corporis quae, quisquam obcaecati architecto similique. Dolor impedit itaque minus veniam animi? Quibusdam ea recusandae velit non autem? Impedit, ipsa? Illo, impedit. Qui, perspiciatis vero iste accusamus assumenda nobis fuga nihil voluptate dolor distinctio! Saepe qui sequi ut aliquam, velit tempora ad ab cupiditate? At consequuntur quia unde quibusdam tenetur reprehenderit magni culpa, reiciendis asperiores temporibus deserunt suscipit magnam quidem saepe amet consectetur tempora autem harum doloremque recusandae nulla minus. Ullam!",
     };
   },
   methods: {
@@ -116,21 +110,5 @@ export default {
   flex-direction: row;
   justify-content: center;
   flex-wrap: wrap;
-}
-.el-carousel__item h3 {
-  color: #ffffff;
-  font-size: 18px;
-  opacity: 0.75;
-  line-height: 300px;
-  margin: 0;
-  text-align: center;
-}
-
-.el-carousel__item:nth-child(2n) {
-  background-color: #ffffff;
-}
-
-.el-carousel__item:nth-child(2n + 1) {
-  background-color: #ffffff;
 }
 </style>
