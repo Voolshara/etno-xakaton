@@ -21,7 +21,7 @@
 </template>
 
 <script>
-import text_img_left from "@/components/arcticle_widgets/text_img.vue";
+import text_img_left from "@/components/article_widgets/text_img.vue";
 
 export default {
   data() {
@@ -32,7 +32,8 @@ export default {
   },
   methods: {
     get_data_for_article: function (router) {
-      fetch("https://engine.etno-xakaton.ru/arcticle_data", {
+      // fetch("https://engine.etno-xakaton.ru/arcticle_data", {
+      fetch("http://localhost:4600/arcticle_data", {
         method: "POST", // *GET, POS  T, PUT, DELETE, etc.
         mode: "cors", // no-cors, *cors, same-origin
         cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
