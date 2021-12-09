@@ -48,7 +48,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .ti_element {
   .element_text {
     text-align: left;
