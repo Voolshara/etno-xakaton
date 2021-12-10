@@ -16,7 +16,7 @@
           <span class="hero-banner-icon"
             ><img src="/img/nizhny-gerb.png"
           /></span>
-          <h1>Нижний Новгород</h1>
+          <h1>{{ arcticle_data['name']}}</h1>
         </div>
       </section>
       <section class="section-padding--small bg-gray">
@@ -85,7 +85,7 @@
 </template>
 
 <script>
-import Main_text from "@/components/arcticle_widgets/main_text.vue";
+import Main_text from "@/components/article_widgets/main_text.vue";
 export default {
   data() {
     return {
@@ -118,7 +118,7 @@ export default {
           if (data["meta"]["status"] == "error") {
             this.is_error = true;
           }
-          this.arcticle_data = data["data"];
+          this.arcticle_data = data;
         })
         .catch((error) => {
           console.error("Error:", error);

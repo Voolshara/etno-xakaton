@@ -10,11 +10,11 @@
           <div class="element_text_header">{{ this.label }}</div>
           <div class="element_text">{{ this.text }}</div>
           <div class="author">
-            <img src="/img/obser_decks.jpg" />
-            <a>~MILORD</a>
+            <img src="/img/gorky.jpg" />
+            <a>~{{this.author_name}}Максим Горький</a>
           </div>
         </div>
-        <el-image :src="img" :fit="'cover'" class="element_image"></el-image>
+        <el-image src="/img/abobus.jpg" :fit="'cover'" class="element_image"></el-image>
       </div>
       <Down_arrow :class="arrow_button" />
     </el-card>
@@ -36,6 +36,8 @@ export default {
     label: String,
     text: String,
     img: String,
+    author_img: String,
+    author_name: String,
   },
   components: {
     Down_arrow,

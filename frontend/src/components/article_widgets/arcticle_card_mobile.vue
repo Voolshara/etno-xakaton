@@ -7,21 +7,32 @@
     />
     <div
       v-else
-      v-for="element in arcticle_data"
+      v-for="element in arcticle_data['parts']"
       :key="element"
       class="cards-container"
     >
+    <div>
+      {{element}}
+    </div>
+    <div
+      v-for="el in element['cards']"
+      :key="el"
+      class="cards-container"
+    >
       <Main_text
-        :text="element['full_text']"
-        :img="element['img']"
-        :label="element['label']"
+        :text="el['full_text']"
+        :img="el['img']"
+        :label="el['label']"
+        :author_name="el['author']['name']"
+        :author_img="el['author']['photo']"
       />
+    </div>
     </div>
   </div>
 </template>
 
 <script>
-import Main_text from "@/components/arcticle_widgets/text_img.vue";
+import Main_text from "@/components/article_widgets/text_img.vue";
 
 export default {
   data() {
@@ -50,10 +61,7 @@ export default {
       })
         .then((response) => response.json())
         .then((data) => {
-          if (data["meta"]["status"] == "error") {
-            this.is_error = true;
-          }
-          this.arcticle_data = data["data"];
+          this.arcticle_data = data;
         })
         .catch((error) => {
           console.error("Error:", error);
