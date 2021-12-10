@@ -37,7 +37,6 @@ def create_session(**kwargs):
     finally:
         new_session.close()
 
-
 class Authors(Base):
     __tablename__ = 'authors'
     id = sa.Column(sa.Integer, primary_key=True)
