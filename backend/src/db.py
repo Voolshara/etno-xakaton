@@ -337,10 +337,15 @@ class DB_new:
         Base.metadata.create_all(engine)
 
 
-# DBN = DB_new()
-# DBN.create_all_tables()
+DBN = DB_new()
+DBG = DB_get()
+#DBN.create_all_tables()
 # DBN.create_new_article("Нижний Новгород", "/nizhny")
 # DBN.create_new_article("Казань", "/kazan")
-# DBN.add_new_longrid_part("/kazan", "МАКСИМ", "", "О школе", ["Первый парараграф", "Второй параграф"], "Кадилов Михуил")
+# DBN.write_img_to_article("/nizhny", "/img/nizhny-gerb.png", "/img/nizhny-pre.jpeg")
+DBN.write_img_to_article("/kazan", "/img/kazan-gerb.png", "/img/kazan-pre.jpg")
+#DBN.add_new_longrid_part("/kazan", "МАКСИМ", "", "О школе", ["Первый парараграф", "Второй параграф"], "Кадилов Михуил")
 # DBN.add_new_card_to_longrid(1, "Максим", ["Первый абзац", "Второй абзац"], "", "", "simple-card", "Кадилов Михуил")
 # DBN.write_img_to_article("/kazan", "/img/nizhny-gerb.png", "/img/nizhny-pre.jpeg")
+
+print('[DB CREATOR] Succeful')
