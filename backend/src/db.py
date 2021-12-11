@@ -98,11 +98,19 @@ class Cards_Bind(Base):
     type = sa.Column(sa.String())
 
 
+class DB_write:
+    def add_redirect(self, router):
+        with create_session() as session:
+            session.query(Articles).filter(Articles.router == router).update({
+                "redirect" : Articles.redirect + 1
+            })
+
 class DB_get:
     def popular_articles(self):
         with create_session() as session:
-            data = session.query(Articles).order_by(Articles.redirect)
-            return data
+            data = session.query(Articles).order_by(Articles.redirect).all()
+            data.reverse()
+            return {"data" : [[el.name, el.description, el.img, el.router] for el in data]}
 
     def get_data_for_article(self, router):
         with create_session() as session:
