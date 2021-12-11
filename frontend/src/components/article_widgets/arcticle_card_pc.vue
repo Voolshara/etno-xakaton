@@ -8,13 +8,11 @@
     <div v-else>
       <section
         class="hero-banner"
-        :style="{
-          backgroundImage: `url('/img/nizhny-pre.jpeg')`,
-        }"
+        :style="{ backgroundImage: `url(${arcticle_data.img.bg})` }"
       >
         <div class="text-center">
           <span class="hero-banner-icon"
-            ><img src="/img/nizhny-gerb.png"
+            ><img :src="arcticle_data.img.gerb"
           /></span>
           <h1>{{ arcticle_data['name']}}</h1>
         </div>

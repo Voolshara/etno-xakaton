@@ -14,8 +14,7 @@ runner = Typer()
 
 @app.route('/arcticle_data', methods=['POST'])  # роут сборки шаблонов
 def arcticle():
-    # data = DBG.get_data_for_article("/" + request.json['router'])
-    data = DBG.get_data_for_article("/kazan")
+    data = DBG.get_data_for_article("/" + request.json['router'])
     if data is None:
         return {
             "meta" : {
