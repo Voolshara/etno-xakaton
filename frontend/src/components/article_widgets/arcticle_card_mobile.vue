@@ -11,22 +11,18 @@
       :key="element"
       class="cards-container"
     >
-    <div>
-      {{element}}
-    </div>
-    <div
-      v-for="el in element['cards']"
-      :key="el"
-      class="cards-container"
-    >
-      <Main_text
-        :text="el['full_text']"
-        :img="el['img']"
-        :label="el['label']"
-        :author_name="el['author']['name']"
-        :author_img="el['author']['photo']"
-      />
-    </div>
+      <div>
+        {{ element }}
+      </div>
+      <div v-for="el in element['cards']" :key="el" class="cards-container">
+        <Main_text
+          :text="el['full_text']"
+          :img="el['img']"
+          :label="el['label']"
+          :author_name="el['author']['name']"
+          :author_img="el['author']['photo']"
+        />
+      </div>
     </div>
   </div>
 </template>
@@ -43,7 +39,7 @@ export default {
   },
   methods: {
     get_data_for_article: function (router) {
-      fetch("https://engine.etno-xakaton.ru/arcticle_data", {
+      fetch("https://engine.etno-xakaton.ru/article_data", {
         method: "POST", // *GET, POS  T, PUT, DELETE, etc.
         mode: "cors", // no-cors, *cors, same-origin
         cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached

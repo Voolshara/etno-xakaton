@@ -5,14 +5,14 @@ from src.db import DB_get
 
 app = Flask(__name__)
 CORS(app, resources={
-    r"/arcticle_data*": {"origins": "*"},
+    r"/article_data*": {"origins": "*"},
     }) # настройка CORS POLICY
 app.config['CORS_HEADERS'] = 'Access-Control-Allow-Origin'
 
 DBG = DB_get()
 runner = Typer()
 
-@app.route('/arcticle_data', methods=['POST'])  # роут сборки шаблонов
+@app.route('/article_data', methods=['POST'])  # роут сборки шаблонов
 def arcticle():
     data = DBG.get_data_for_article("/" + request.json['router'])
     if data is None:
