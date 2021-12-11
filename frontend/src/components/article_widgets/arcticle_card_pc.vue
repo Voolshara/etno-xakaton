@@ -17,52 +17,14 @@
           <h1>{{ arcticle_data["name"] }}</h1>
         </div>
       </section>
-      <section class="section-padding--small bg-gray">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-6 align-self-center mb-5 mb-lg-0">
-              <div class="innovative-wrapper">
-                <h3 class="primary-text">
-                  Innovative With Experience <br class="d-none d-xl-block" />
-                  UX Design 2019
-                </h3>
-                <p class="h4 primary-text2 mb-3">
-                  Where The business World Meets
-                </p>
-                <p>
-                  Mornin steas great earths for divide our good sixth called
-                  abunda itseld appear fisrd seaton upon above may bearing all
-                  moveth morning mak subdue stars they are a goreat eart divide
-                  our good sixth one of that
-                </p>
-              </div>
-            </div>
-            <div class="col-lg-6 pl-xl-5">
-              <ul class="clockdiv text-center" id="clockdiv">
-                <li class="clockdiv-single clockdiv-day">
-                  <h1 class="days">320</h1>
-                  <span class="smalltext">Days</span>
-                </li>
-                <li class="clockdiv-single clockdiv-hour">
-                  <h1 class="hours">30</h1>
-                  <span class="smalltext">Hours</span>
-                </li>
-                <li class="clockdiv-single clockdiv-minute">
-                  <h1 class="minutes">30</h1>
-                  <span class="smalltext">Mins</span>
-                </li>
-              </ul>
-
-              <div class="clockdiv-content text-center">
-                <p class="h4 primary-text2 mb-2">
-                  January 20 -22, 2019 in Buffelo City
-                </p>
-                <a class="button button-link" href="#">Get Ticket</a>
-              </div>
-            </div>
+      <div v-for="article in arcticle_data['parts']" :key="article">
+        <div style="margin-bottom: 40px;">
+          <h3> {{article['label']}} </h3>
+          <div v-for="text in article['full_text']" :key="text">
+            <p> {{text}} </p>
           </div>
         </div>
-      </section>
+      </div>
       <el-carousel indicator-position="none" height="50vw">
         <el-carousel-item
           v-for="element in arcticle_data"
