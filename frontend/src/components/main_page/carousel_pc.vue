@@ -52,33 +52,33 @@ export default {
       counter: 0,
       carousel_data: [
         {
+          img: "/img/chebocksary_king_city.png",
+          name: "Чебоксары",
+          link: "cheboksary",
+          description: "1",
+        },
+        {
           img: "/img/nijniy-novgorod.jpg",
           name: "Нижний Новгород",
           link: "nizhny",
-          description: "1",
+          description: "2",
         },
         {
           img: "/img/kazan.png",
           name: "Казань",
           link: "kazan",
-          description: "2",
+          description: "3",
         },
         {
           img: "/img/saransk.png",
           name: "Саранск",
           link: "Саранск",
-          description: "3",
+          description: "4",
         },
         {
           img: "/img/esharala.png",
           name: "Йошкар-Ола",
           link: "Йошкар-Ола",
-          description: "4",
-        },
-        {
-          img: "/img/sviajsk.png",
-          name: "Свияжск",
-          link: "Свияжск",
           description: "5",
         },
       ],
@@ -137,7 +137,7 @@ export default {
   border-radius: 50%;
   color: #fff;
   position: absolute;
-  top: 30vh;
+  top: 73vh;
   transform: translateY(-50%);
   text-align: center;
   font-size: var(--el-carousel-arrow-font-size);

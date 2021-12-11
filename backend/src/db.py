@@ -273,7 +273,7 @@ class DB_new:
 
 # _________________________________________________________________________________________________________________
 
-    def crete_new_longrid_element(self, name, desc, label, full_text_arr, author_id):
+    def crete_new_longrid_element(self, name, desc, label, full_text_arr, author_id, img_h1 = [], img_h2 = [], img_h3 = []):
         with create_session() as session:
             session.add(Longrid_Parts(
                 name=name,
@@ -281,9 +281,9 @@ class DB_new:
                 label=label,
                 full_text=full_text_arr,
                 author_id=author_id,
-                img_h1 = [],
-                img_h2 = [],
-                img_h3 = [],
+                img_h1 = img_h1,
+                img_h2 = img_h2,
+                img_h3 = img_h3,
                 videos = [],
             ))
             return session.query(Longrid_Parts).filter(and_(
@@ -302,7 +302,7 @@ class DB_new:
                 serial_number = serial_number,
             ))
 
-    def add_new_longrid_part(self, router, name, desc, label, full_text, author_name):
+    def add_new_longrid_part(self, router, name, desc, label, full_text, author_name, img_h1 = [""], img_h2 = [""], img_h3 = [""]):
         with create_session() as session:
             if author_name is None:
                 author_id = None
@@ -311,7 +311,7 @@ class DB_new:
                 if author_id is None:
                     self.create_new_author(author_name, "", "", "")
                 author_id, *other_data = self.DBS.get_author(author_name)
-            longrid_part = self.crete_new_longrid_element(name, desc, label, full_text, author_id)
+            longrid_part = self.crete_new_longrid_element(name, desc, label, full_text, author_id, img_h1, img_h2, img_h3)
             id_article = session.query(Articles).filter(
                 Articles.router == router).one_or_none()
             if id_article is None:
@@ -343,9 +343,17 @@ DBG = DB_get()
 # DBN.create_new_article("Нижний Новгород", "/nizhny")
 # DBN.create_new_article("Казань", "/kazan")
 # DBN.write_img_to_article("/nizhny", "/img/nizhny-gerb.png", "/img/nizhny-pre.jpeg")
-DBN.write_img_to_article("/kazan", "/img/kazan-gerb.png", "/img/kazan-pre.jpg")
+#DBN.write_img_to_article("/kazan", "/img/kazan-gerb.png", "/img/kazan-pre.jpg")
 #DBN.add_new_longrid_part("/kazan", "МАКСИМ", "", "О школе", ["Первый парараграф", "Второй параграф"], "Кадилов Михуил")
 # DBN.add_new_card_to_longrid(1, "Максим", ["Первый абзац", "Второй абзац"], "", "", "simple-card", "Кадилов Михуил")
 # DBN.write_img_to_article("/kazan", "/img/nizhny-gerb.png", "/img/nizhny-pre.jpeg")
+
+DBN.add_new_longrid_part("/kazan", "kazan", "", "Первое впечатление", ["Наша дружная группа вновь отправилась в экспедицию, чтобы с головой окунуться в проект ЭТНО-хакатон. На этот раз мы прибыли в Казань – столицу Татарстана. Даже с окна автобуса видно, что город чистый и опрятный, а дороги ровные и широкие.", "Микрорайон, где мы высадились из автобуса, называется «Седьмое небо». Наверное, потому, что вокруг стоят небоскрёбы. У нас в Чебоксарах дома выше 10 этажей – редкость, в Казани же это необходимо. В городе проживает около миллиона человек.",
+"Несмотря на различия в демографии, город чем-то да похож на Нижний Новгород и Чебоксары. Главное различие, которое приметили все, даже педагоги – отсутствие ИКЕА в Чебоксарах."], "Команда Этно-Хакатона")
+DBN.add_new_longrid_part("/kazan", "kazan", "", "Знакомство со школой", ["Центр жилого массива – многопрофильная школа № 181. Нас гостеприимно встречают директор, учителя, дети, одетые в национальные костюмы. Школа уютная, красиво оформленная, глаза разбегаются.",
+"Через несколько минут мы отправимся по коридорам и мастерским. А пока нас просто захватывает танец «Дружба народов». Мелодии сменяют друг друга, девушки в национальных костюмах народов Поволжья парами выходят вперед и исполняют знакомые движения.", "Данное выступление оставило прекрасное впечатление и осталось в наших сердцах надолго. В ходе интервью у одной из учениц, оказалось, что данное выступление ежегодно показывают в стенах этой школы во время фестиваля, когда каждый класс представляет свою, выбранную жеребьевкой, страну. Фестиваль народов в школе №181 - это уже традиция.",
+"После выступления, на одном из мастер-классов по изготовлению калфаков, преподаватели разговаривали на татарском языке. Очень интересно было слушать татарскую речь, так как она отличается от привычной нам чувашской. Калфак – традиционный женский головной убор в Татарстане, удивительно было узнать, что делается он достаточно легко!",
+"Потом мы весело выкладываем собственные имена на русском и английском языках с помощью…матрёшек и тюльпанов. Такая уникальная азбука – ручная работа ребят и педагогов. К ручному труду в казанской школе, как мы заметили, особо трепетное отношение.",
+"Помимо мастер-класса по калфакам, нам показали процесс создания деревянных значков с эмблемой школы, и как рисовать элементы татарских орнаментов. В целом и общем, нас полностью одарили и духовно, и физически, ведь мы унесли на память сделанные собственными руками сувениры."], "Команда Этно-Хакатона")
 
 print('[DB CREATOR] Succeful')
