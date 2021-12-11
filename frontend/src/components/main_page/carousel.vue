@@ -36,7 +36,6 @@ export default {
         { img: "/img/kazan.png", name: "Казань", link: "kazan" },
         { img: "/img/saransk.png", name: "Саранск", link: "Саранск" },
         { img: "/img/esharala.png", name: "Йошкар-Ола", link: "Йошкар-Ола" },
-        { img: "/img/sviajsk.png", name: "Свияжск", link: "Свияжск" },
       ],
     };
   },

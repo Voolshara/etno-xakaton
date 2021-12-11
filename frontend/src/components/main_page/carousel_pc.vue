@@ -75,12 +75,6 @@ export default {
           link: "Йошкар-Ола",
           description: "4",
         },
-        {
-          img: "/img/sviajsk.png",
-          name: "Свияжск",
-          link: "Свияжск",
-          description: "5",
-        },
       ],
     };
   },
