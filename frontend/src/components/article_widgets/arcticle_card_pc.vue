@@ -34,7 +34,7 @@
                 <p>
                   Mornin steas great earths for divide our good sixth called
                   abunda itseld appear fisrd seaton upon above may bearing all
-                  moveth morning make subdue stars they are a goreat eart divide
+                  moveth morning mak subdue stars they are a goreat eart divide
                   our good sixth one of that
                 </p>
               </div>
