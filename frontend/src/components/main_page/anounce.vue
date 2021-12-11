@@ -23,7 +23,6 @@
     </div>
   </div>
 </template>
-
 <style lang="scss">
 .main-block-anounce {
   margin-top: 7px;
