@@ -17,11 +17,45 @@
           <h1>{{ arcticle_data["name"] }}</h1>
         </div>
       </section>
-      <div v-for="article in arcticle_data['parts']" :key="article">
-        <div style="margin-bottom: 40px;">
-          <h3> {{article['label']}} </h3>
-          <div v-for="text in article['full_text']" :key="text">
-            <p> {{text}} </p>
+      <div
+        v-for="(article, index) in arcticle_data['parts']"
+        :key="(article, index)"
+      >
+        <div v-if="index % 2 == 0">
+          <div class="article-container" style="background-color: #ffd49a">
+            <div class="aritcle-label">
+              <a class="article-label-a"> {{ article["label"] }} </a>
+            </div>
+            <div class="article-content">
+              <div id="text">
+                <p v-for="text in article['full_text']" :key="text">
+                  {{ text }}
+                </p>
+              </div>
+              <img :src="article['img']['H1'][0]" />
+            </div>
+            <div class="author-sign">
+              <a style="color:rgb(207, 185, 158)">~ {{ article["author"]["name"] }}</a>
+            </div>
+          </div>
+        </div>
+        <div v-else>
+          <div class="article-container" style="background-color: #cfb99e">
+            <div class="aritcle-label">
+              <a class="article-label-a"> {{ article["label"] }} </a>
+            </div>
+            <div class="article-content">
+              <img :src="article['img']['H1'][0]" />
+
+              <div id="text">
+                <p v-for="text in article['full_text']" :key="text">
+                  {{ text }}
+                </p>
+              </div>
+            </div>
+            <div class="author-sign">
+              <a style="color: rgb(151 87 2)">~{{ article["author"]["name"] }}</a>
+            </div>
           </div>
         </div>
       </div>
@@ -51,8 +85,9 @@ export default {
     return {
       arcticle_data: [],
       is_error: false,
+      is_chered: true,
       lorem200:
-        "lorem ipsum dolor sit amet onsectetur adipisicing elit. Nisi odio molestias nemo nostrum sit dolorem blanditiis sed, voluptas eaque dolor veritatis sapiente, consectetur veniam reiciendis ea nobis velit molestiae, amet iste ab modi debitis adipisci corrupti corporis. Repellat, possimus hic adipisci eum tempora neque. Iusto assumenda iure mollitia sint vero laudantium repudiandae numquam consequuntur repellendus accusamus voluptate ex ullam molestiae temporibus minus, pariatur neque impedit. Impedit sed amet, temporibus saepe consectetur magni corrupti facere provident at pariatur, officiis laborum porro enim labore nemo molestias necessitatibus, perspiciatis quod aut ex. Fugiat obcaecati est vel vitae deserunt! Sunt ipsum deleniti eos! Recusandae numquam voluptatem deserunt ducimus dolorem harum esse reiciendis sequi ut beatae rerum sunt molestiae ipsum nihil ab nesciunt magnam nemo ea totam obcaecati assumenda praesentium, saepe, molestias illum! Nihil corporis quae, quisquam obcaecati architecto similique. Dolor impedit itaque minus veniam animi? Quibusdam ea recusandae velit non autem? Impedit, ipsa? Illo, impedit. Qui, perspiciatis vero iste accusamus assumenda nobis fuga nihil voluptate dolor distinctio! Saepe qui sequi ut aliquam, velit tempora ad ab cupiditate? At consequuntur quia unde quibusdam tenetur reprehenderit magni culpa, reiciendis asperiores temporibus deserunt suscipit magnam quidem saepe amet consectetur tempora autem harum doloremque recusandae nulla minus. Ullam!",
+        "lorem  perspiciatis quod aut ex. Fugiat obcaecati est vel vitae deserunt! Sunt ipsum deleniti eos! Recusandae numquam voluptatem deserunt ducimus dolorem harum esse reiciendis sequi ut beatae rerum sunt molestiae ipsum nihil ab nesciunt magnam nemo ea totam obcaecati assumenda praesentium, saepe, molestias illum! Nihil corporis quae, quisquam obcaecati architecto similique. Dolor impedit itaque minus veniam animi? Quibusdam ea recusandae velit non autem? Impedit, ipsa? Illo, impedit. Qui, perspiciatis vero iste accusamus assumenda nobis fuga nihil voluptate dolor distinctio! Saepe qui sequi ut aliquam, velit tempora ad ab cupiditate? At consequuntur quia unde quibusdam tenetur reprehenderit magni culpa, reiciendis asperiores temporibus deserunt suscipit magnam quidem saepe amet consectetur tempora autem harum doloremque recusandae nulla minus. Ullam!",
     };
   },
   methods: {
@@ -97,6 +132,43 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.author-sign{
+  padding-top: 20px;
+  a{
+    font-size: 15px;
+    font-family: 'Comfortaa';
+  }
+}
+.article-container {
+  padding: 20px;
+  background-color: azure;
+}
+
+.article-label-a {
+  font-size: 35px;
+  font-family: fantasy;
+}
+.article-label {
+}
+.article-content {
+  text-align: left;
+  display: flex;
+  text-indent: 25px;
+  padding-top: 30px;
+  p {
+    color: black;
+    font-family: "Oswald", sans-serif;
+    font-size: 16px;
+    line-height: 26px;
+    text-indent: 30px;
+    margin: 0;
+  }
+  img {
+    height: fit-content;
+    margin: 0 10px;
+    width: 40%;
+  }
+}
 .about-school {
   .cards-container {
     display: flex;
