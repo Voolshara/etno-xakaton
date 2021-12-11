@@ -273,7 +273,7 @@ class DB_new:
 
 # _________________________________________________________________________________________________________________
 
-    def crete_new_longrid_element(self, name, desc, label, full_text_arr, author_id):
+    def crete_new_longrid_element(self, name, desc, label, full_text_arr, author_id, img_h1 = [], img_h2 = [], img_h3 = []):
         with create_session() as session:
             session.add(Longrid_Parts(
                 name=name,
@@ -281,9 +281,9 @@ class DB_new:
                 label=label,
                 full_text=full_text_arr,
                 author_id=author_id,
-                img_h1 = [],
-                img_h2 = [],
-                img_h3 = [],
+                img_h1 = img_h1,
+                img_h2 = img_h2,
+                img_h3 = img_h3,
                 videos = [],
             ))
             return session.query(Longrid_Parts).filter(and_(
@@ -302,7 +302,7 @@ class DB_new:
                 serial_number = serial_number,
             ))
 
-    def add_new_longrid_part(self, router, name, desc, label, full_text, author_name):
+    def add_new_longrid_part(self, router, name, desc, label, full_text, author_name, img_h1 = [], img_h2 = [], img_h3 = []):
         with create_session() as session:
             if author_name is None:
                 author_id = None
@@ -311,7 +311,7 @@ class DB_new:
                 if author_id is None:
                     self.create_new_author(author_name, "", "", "")
                 author_id, *other_data = self.DBS.get_author(author_name)
-            longrid_part = self.crete_new_longrid_element(name, desc, label, full_text, author_id)
+            longrid_part = self.crete_new_longrid_element(name, desc, label, full_text, author_id, img_h1, img_h2, img_h3)
             id_article = session.query(Articles).filter(
                 Articles.router == router).one_or_none()
             if id_article is None:
