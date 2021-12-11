@@ -14,7 +14,7 @@
           <span class="hero-banner-icon"
             ><img :src="arcticle_data.img.gerb"
           /></span>
-          <h1>{{ arcticle_data['name']}}</h1>
+          <h1>{{ arcticle_data["name"] }}</h1>
         </div>
       </section>
       <section class="section-padding--small bg-gray">
@@ -126,6 +126,7 @@ export default {
   },
   mounted() {
     this.get_data_for_article(this.$route.params.city);
+    document.title = "page title";
   },
   components: {
     Main_text,
@@ -315,5 +316,3 @@ export default {
   }
 }
 </style>
-
-
