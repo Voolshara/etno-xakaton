@@ -46,7 +46,6 @@
             </div>
             <div class="article-content">
               <img :src="article['img']['H1'][0]" />
-
               <div id="text">
                 <p v-for="text in article['full_text']" :key="text">
                   {{ text }}

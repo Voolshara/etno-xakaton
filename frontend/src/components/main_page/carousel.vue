@@ -1,18 +1,21 @@
 <template>
-  <swiper
-    :slides-per-view="2.6"
-    :space-between="10"
-    @swiper="onSwiper"
-    @slideChange="onSlideChange"
-    class="carousel"
-  >
-    <swiper-slide v-for="element in carousel_data" v-bind:key="element"
-      ><Element
-        :name="element['name']"
-        :img="element['img']"
-        :link="element['link']"
-    /></swiper-slide>
-  </swiper>
+  <div>
+    <swiper
+      :slides-per-view="2.6"
+      :space-between="10"
+      @swiper="onSwiper"
+      @slideChange="onSlideChange"
+      class="carousel"
+    >
+      <swiper-slide v-for="element in carousel_data" v-bind:key="element"
+        ><Element
+          :name="element['name']"
+          :img="element['img']"
+          :link="element['link']"
+      /></swiper-slide>
+    </swiper>
+    <hr>
+  </div>
 </template>
 <script>
 import Element from "@/components/main_page/carousel_element.vue";
@@ -27,16 +30,37 @@ export default {
   },
   data() {
     return {
-      carousel_data: [
+     carousel_data: [
+        {
+          img: "/img/chebocksary_king_city.png",
+          name: "Чебоксары",
+          link: "cheboksary",
+          description: "1",
+        },
         {
           img: "/img/nijniy-novgorod.jpg",
           name: "Нижний Новгород",
           link: "nizhny",
+          description: "2",
         },
-        { img: "/img/kazan.png", name: "Казань", link: "kazan" },
-        { img: "/img/saransk.png", name: "Саранск", link: "Саранск" },
-        { img: "/img/esharala.png", name: "Йошкар-Ола", link: "Йошкар-Ола" },
-        { img: "/img/sviajsk.png", name: "Свияжск", link: "Свияжск" },
+        {
+          img: "/img/kazan.png",
+          name: "Казань",
+          link: "kazan",
+          description: "3",
+        },
+        {
+          img: "/img/saransk.png",
+          name: "Саранск",
+          link: "Саранск",
+          description: "4",
+        },
+        {
+          img: "/img/esharala.png",
+          name: "Йошкар-Ола",
+          link: "Йошкар-Ола",
+          description: "5",
+        },
       ],
     };
   },
