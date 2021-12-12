@@ -21,6 +21,7 @@
 Проект продолжается…
       </div>
     </div>
+    <hr>
   </div>
 </template>
 
@@ -28,11 +29,11 @@
 .main-block-anounce {
   margin-top: 7px;
   margin-bottom: 30px;
-  font-size: 60px;
+  font-size: 25px;
   font-family: "Yanone Kaffeesatz", sans-serif;
   text-align: left;
   .anounce-block {
-    font-size: 20px;
+    font-size: 19px;
     font-family: "Caveat", cursive;
   }
 }
