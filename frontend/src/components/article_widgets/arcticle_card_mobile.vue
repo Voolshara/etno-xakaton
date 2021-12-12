@@ -54,15 +54,20 @@
             </div>
           </div>
         </div>
-        <div v-for="el in article['cards']" :key="el" class="cards-container">
-          <Main_text
-            :text="el['full_text']"
-            :img="el['img']"
-            :label="el['label']"
-            :author_name="el['author']['name']"
-            :author_img="el['author']['photo']"
-          />
-        </div>
+        <el-carousel type="card" indicator-position="none" height="50vw">
+          <el-carousel-item
+            v-for="element in arcticle_data"
+            :key="element"
+            pause-on-hover="true">
+            <div class="cards-container">
+              <Main_text
+                :text="this.lorem200"
+                :img="element['img']"
+                :label="element['label']"
+              />
+            </div>
+          </el-carousel-item>
+        </el-carousel>
       </div>
     </div>
   </div>
