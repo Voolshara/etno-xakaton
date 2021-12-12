@@ -24,3 +24,7 @@ __pycache__/
 *.sln
 *.sw?
 750
+
+# DB_data
+backend/src/fill_DB/
+# kazan.py
