@@ -87,6 +87,9 @@ export default {
     return {
       arcticle_data: [],
       is_error: false,
+      Card,
+    Swiper,
+    SwiperSlide,
     };
   },
   methods: {
