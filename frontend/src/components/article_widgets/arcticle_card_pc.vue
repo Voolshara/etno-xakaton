@@ -1,5 +1,6 @@
 <template>
   <div>
+    {{ arcticle_data }}
     <div v-if="is_error == true" class="error-code">404</div>
     <el-skeleton
       v-else-if="is_error == false && arcticle_data.length == 0"
@@ -35,7 +36,9 @@
               <img :src="article['img']['H1'][0]" />
             </div>
             <div class="author-sign">
-              <a style="color:rgb(207, 185, 158)">~ {{ article["author"]["name"] }}</a>
+              <a style="color: rgb(207, 185, 158)"
+                >~ {{ article["author"]["name"] }}</a
+              >
             </div>
           </div>
         </div>
@@ -53,7 +56,9 @@
               </div>
             </div>
             <div class="author-sign">
-              <a style="color: rgb(151 87 2)">~{{ article["author"]["name"] }}</a>
+              <a style="color: rgb(151 87 2)"
+                >~{{ article["author"]["name"] }}</a
+              >
             </div>
           </div>
         </div>
@@ -92,7 +97,8 @@ export default {
   methods: {
     get_data_for_article: function (router) {
       fetch("https://engine.etno-xakaton.ru/article_data", {
-        method: "POST", // *GET, POS  T, PUT, DELETE, etc.
+        // fetch("http://localhost:4600/article_data", {
+        method: "POST", // *GET, POST, PUT, DELETE, etc.
         mode: "cors", // no-cors, *cors, same-origin
         cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
         credentials: "same-origin", // include, *same-origin, omit
@@ -131,11 +137,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.author-sign{
+.author-sign {
   padding-top: 20px;
-  a{
+  a {
     font-size: 15px;
-    font-family: 'Comfortaa';
+    font-family: "Comfortaa";
   }
 }
 .article-container {

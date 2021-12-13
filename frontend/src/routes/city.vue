@@ -7,7 +7,8 @@
 
 <script>
 import pc from "@/components/article_widgets/arcticle_card_pc.vue";
-import mobile from "@/components/article_widgets/arcticle_card_mobile.vue";
+// import mobile from "@/components/article_widgets/arcticle_card_mobile.vue";
+import mobile from "@/components/article_widgets/phone_arcticle.vue";
 export default {
   methods: {
     isMobile() {
