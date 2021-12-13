@@ -8,22 +8,24 @@
         <CarouselPC class="carousel_pc" />
       </div>
       <!-- <div class="border animate__animated animate__fadeIn"></div> -->
-      <About class="s3" />
+      <Team />
     </div>
   </div>
 </template>
 
 <script>
 import Anounce from "@/components/main_page/anounce.vue";
-import About from "@/components/main_page/about.vue";
+// import About from "@/components/main_page/about.vue";
 import Carousel from "@/components/main_page/carousel.vue";
 import CarouselPC from "@/components/main_page/carousel_pc.vue";
+import Team from "@/components/main_page/team.vue";
 export default {
   components: {
     Anounce,
-    About,
+    // About,
     Carousel,
     CarouselPC,
+    Team,
   },
 };
 </script>
