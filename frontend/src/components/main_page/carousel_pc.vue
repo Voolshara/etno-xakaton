@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="carousel_block">
     <div class="arrow arrow--left" v-on:click="$refs.input.prev()">
       <img
         src="https://img.icons8.com/ios-filled/50/000000/expand-arrow.png"
@@ -39,7 +39,7 @@
         </router-link>
       </el-carousel-item>
     </el-carousel>
-    {{ carousel_data[counter]["description"] }}
+    <!-- {{ carousel_data[counter]["description"] }} -->
   </div>
 </template>
 
@@ -105,6 +105,11 @@ export default {
 };
 </script>
 <style scoped>
+.carousel_block {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+}
 .el-carousel__arrow {
   bottom: 0;
 }
@@ -137,7 +142,7 @@ export default {
   border-radius: 50%;
   color: #fff;
   position: absolute;
-  top: 73vh;
+  top: 300px;
   transform: translateY(-50%);
   text-align: center;
   font-size: var(--el-carousel-arrow-font-size);
