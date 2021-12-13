@@ -1,8 +1,15 @@
 <template>
   <div class="wrapper animate__animated animate__slideInLeft">
     <div class="label">~ {{ data["label"] }}</div>
-    <div class="main-text" v-for="p in data['full_text']" :key="p">
-      <p>{{ p }}</p>
+    <div class="main-text" v-for="n in data['full_text'].length" :key="n">
+      <p>
+        {{ data["full_text"][n] }}
+        <el-image
+          v-if="n < data['img']['H1'].length"
+          :src="'/img/' + data['img']['H1'][n]"
+          :fit="'cover'"
+        ></el-image>
+      </p>
     </div>
     <swiper
       v-if="data['cards'].length > 0"

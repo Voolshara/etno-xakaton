@@ -10,54 +10,37 @@
         </div>
       </div>
       <div class="information" v-for="el in parts" :key="el">
-        <Element :data="el" />
+        <Element v-if="el['label'] != 'карта'" :data="el" />
+        <Map v-else :data="map[this.$route.params.city]" />
       </div>
     </div>
   </div>
 </template>
 
-<style lang="scss">
-.bg_data {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: absolute;
-  top: 25vh;
-  z-index: 2;
-  height: 100vh;
-  width: 100vw;
-
-  .city-name {
-    color: #fff;
-    font-size: 70px;
-    position: relative;
-    left: -1vw;
-  }
-}
-.preview {
-  margin: -1px -15px -10px -15px;
-
-  .bg_img {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    z-index: 1;
-  }
-}
-.city-container {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-}
-</style>
-
 <script>
 import Element from "@/components/article_widgets/article_element_mobile.vue";
+import Map from "@/components/article_widgets/map.vue";
 export default {
-  components: { Element },
+  components: { Element, Map },
   data() {
     return {
       is_load: true,
+      map: {
+        kazan: [
+          [56.139918, 47.247728],
+          [55.781469, 49.133238],
+          [55.789821, 49.110465],
+          [55.788054, 49.123837],
+          [55.792392, 49.11148],
+          [55.800427, 49.111939],
+          [55.799214, 49.106144],
+          [55.795858, 49.109599],
+          [55.796553, 49.108077],
+          [55.798321, 49.105189],
+          [55.800501, 49.105184],
+          [56.139918, 47.247728],
+        ],
+      },
     };
   },
   methods: {
@@ -103,3 +86,38 @@ export default {
   },
 };
 </script>
+
+<style lang="scss">
+.bg_data {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 25vh;
+  z-index: 2;
+  height: 100vh;
+  width: 100vw;
+
+  .city-name {
+    color: #fff;
+    font-size: 70px;
+    position: relative;
+    left: -1vw;
+  }
+}
+.preview {
+  margin: -1px -15px -10px -15px;
+
+  .bg_img {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    z-index: 1;
+  }
+}
+.city-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+</style>

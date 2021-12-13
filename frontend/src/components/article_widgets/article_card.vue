@@ -49,6 +49,5 @@ export default {
     name: String,
     // img: String
   },
-  mounted() {},
 };
 </script>

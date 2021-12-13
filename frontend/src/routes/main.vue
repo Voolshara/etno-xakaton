@@ -4,8 +4,8 @@
     <!-- <div class="border animate__animated animate__fadeIn"></div> -->
     <div class="main-block">
       <div class="back-carousel">
-        <Carousel class="carousel_mobile" />
-        <CarouselPC class="carousel_pc" />
+        <Carousel v-if="isMobile()" class="carousel_mobile" />
+        <CarouselPC v-else class="carousel_pc" />
       </div>
       <!-- <div class="border animate__animated animate__fadeIn"></div> -->
       <Team />
@@ -26,6 +26,19 @@ export default {
     Carousel,
     CarouselPC,
     Team,
+  },
+  methods: {
+    isMobile() {
+      if (
+        /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+          navigator.userAgent
+        )
+      ) {
+        return true;
+      } else {
+        return false;
+      }
+    },
   },
 };
 </script>

@@ -101,22 +101,13 @@ DBN.create_new_article("Казань", "/kazan")
 for el in ALL_PARTS:
     if len(ALL_PARTS[el]["img"]) <= 3:
         im_1 = []
-        im_2 = []
-        im_3 = []
         for i in range(len(ALL_PARTS[el]["img"])):
-            if i == 1:
-                im_1.append(ALL_PARTS[el]["img"])
-            elif i == 2:
-                im_2.append(ALL_PARTS[el]["img"])
-            elif i == 3:
-                im_3.append(ALL_PARTS[el]["img"])
+            im_1.append(ALL_PARTS[el]["img"])
         type = "simple-card" if ALL_PARTS[el]["type"] not in ["map"] else ALL_PARTS[el]["type"]
     else:
         im_1 = ALL_PARTS[el]["img"]
-        im_2 = []
-        im_3 = []
         type = "karousel"
-    id_article = DBN.add_new_longrid_part("/kazan", el, "", el, ALL_PARTS[el]["full_text"], ALL_PARTS[el]["author"], im_1, im_2, im_3)
+    id_longrid = DBN.add_new_longrid_part("/kazan", el, "", el, ALL_PARTS[el]["full_text"], ALL_PARTS[el]["author"], im_1)
     if ALL_PARTS[el]["card"] != 0:
         if "*" in str(ALL_PARTS[el]["card"]):
             pass
@@ -124,6 +115,27 @@ for el in ALL_PARTS:
             id_of_card = ALL_PARTS[el]["card"]
             city, header, p, img, link = STATES[id_of_card - 1]
             text, author = p[:-1], p[-1]
-            DBN.add_new_card_to_longrid(id_article, header, text, img, "", "text", author)
+            DBN.add_new_card_to_longrid(id_longrid, header, text, img, "", "text", author)
     elif type == "map":
-        DBN.add_new_card_to_longrid(id_article, header, text, img, "", "map", author)
+        DBN.add_new_card_to_longrid(id_longrid, header, text, img, "", "map", author)
+
+
+# import requests, pprint
+# import urllib.parse
+# map_elements = [
+#     "Казань+ул.Петербургская", "Казань+Церковь+Богоявления", 
+#     "Казань+Булак", "Казань+Мосты+Булака", "Казань+Дворец+земледельцев", "Набережная+реки+Казанки", "Казанский+Кремль", 
+#     "Национальный+музей+Республики+Татарстан", "Мэрия+Казани", "Спасская+башня+Кремля", "Спасо-Преображенский+монастырь", 
+#     "Пушечный+двор", "Казань+Губернаторский+дворец", "Ханов", "мечеть+Кул-Шариф", "башня+Сююмбике", 
+#     "Мавзолей+Казанских Ханов"
+# ]
+# ALL_COORDS = []
+# for address in map_elements:
+#     adress_2 = urllib.parse.quote_plus(address)
+#     req = "https://nominatim.openstreetmap.org/?addressdetails=1&q={}&format=json&limit=1".format(adress_2)
+#     print(req)
+#     req = requests.get(req).json()
+#     print(req)
+#     req = req[0]
+#     ALL_COORDS.append([req['lat'], req['lon']])
+# pprint.pp(ALL_COORDS)
