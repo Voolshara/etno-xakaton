@@ -8,7 +8,7 @@
     ></el-image>
     <div class="preview">
       Наша команда
-      <div class="additional_information">Самые умные люди</div>
+      <div class="additional_information">Самые умные люди!!!</div>
     </div>
   </div>
 </template>

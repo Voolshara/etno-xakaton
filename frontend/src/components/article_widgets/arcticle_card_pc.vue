@@ -1,6 +1,6 @@
 <template>
   <div>
-    {{ arcticle_data }}
+    
     <div v-if="is_error == true" class="error-code">404</div>
     <el-skeleton
       v-else-if="is_error == false && arcticle_data.length == 0"
@@ -43,7 +43,8 @@
               <el-carousel-item
                 v-for="item in article['img']['H1']"
                 :key="item"
-                :style="{ backgroundImage: `url(/img/${item})` }"
+                :style="{ backgroundImage: `url(/img/${item})`, backgroundImage: `no-repeat` }"
+                
               >
                 <h3 class="medium">{{ item }}</h3>
               </el-carousel-item>
@@ -76,7 +77,7 @@
               <el-carousel-item
                 v-for="item in article['img']['H1']"
                 :key="item"
-                :style="{ backgroundImage: `url(/img/${item})` }"
+                :style="{ backgroundImage: `url(/img/${item})`, backgroundImage: `no-repeat`}"
               >
                 <h3 class="medium">{{ item }}</h3>
               </el-carousel-item>
