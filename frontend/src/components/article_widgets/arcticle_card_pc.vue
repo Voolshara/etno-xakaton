@@ -1,6 +1,5 @@
 <template>
   <div>
-    {{ arcticle_data }}
     <div v-if="is_error == true" class="error-code">404</div>
     <el-skeleton
       v-else-if="is_error == false && arcticle_data.length == 0"
@@ -35,21 +34,31 @@
               </div>
             </div>
             <el-carousel
-              height="200px"
-              direction="vertical"
-              :autoplay="true"
-              v-if="article['img']['H1'].length >= 1"
+              type="card"
+              height="20vw"
+              margin-top="15px"
+              arrow="never"
+              indicator-position="none"
+              v-if="article[`img`][`H1`].length > 0"
+              autoplay="true"
             >
               <el-carousel-item
                 v-for="item in article['img']['H1']"
                 :key="item"
-                :style="{ backgroundImage: `url(/img/${item})` }"
               >
-                <h3 class="medium">{{ item }}</h3>
+                <img
+                  :src="'/img/' + item"
+                  style="
+                    width: -webkit-fill-available;
+                    position: relative;
+                    height: 100%;
+                  "
+                  class="carousel-img"
+                />
               </el-carousel-item>
             </el-carousel>
             <div class="author-sign">
-              <a style="color: rgb(207, 185, 158)"
+              <a style="color: rgb(60 60 60)"
                 >~ {{ article["author"]["name"] }}</a
               >
             </div>
@@ -68,17 +77,27 @@
               </div>
             </div>
             <el-carousel
-              height="200px"
-              direction="vertical"
-              :autoplay="true"
-              v-if="article['img']['H1'].length >= 1"
+              type="card"
+              height="20vw"
+              margin-top="15px"
+              arrow="never"
+              indicator-position="none"
+              v-if="article[`img`][`H1`].length > 0"
+              autoplay="true"
             >
               <el-carousel-item
                 v-for="item in article['img']['H1']"
                 :key="item"
-                :style="{ backgroundImage: `url(/img/${item})` }"
               >
-                <h3 class="medium">{{ item }}</h3>
+                <img
+                  :src="'/img/' + item"
+                  style="
+                    width: -webkit-fill-available;
+                    position: relative;
+                    height: 100%;
+                  "
+                  class="carousel-img"
+                />
               </el-carousel-item>
             </el-carousel>
             <div class="author-sign">
@@ -88,6 +107,32 @@
             </div>
           </div>
         </div>
+          <el-row>
+            <el-col
+              v-for="item in article['cards']"
+              :key="item"
+              :span="8"
+              :offset="index > 0 ? 2 : 0"
+              >
+              <el-card :body-style="{ padding: '40px' }" :shadow='hower'>
+                <img
+                  src="/img/БЛИН.jpg"
+                  class="image"
+                />
+                <div style="padding: 14px">
+                  <span>
+                    <a style="font-size: 35px; font-family: fantasy; text-transform: capitalize;">
+                      {{item['label']}}
+                    </a>
+                  </span>
+                  <div class="bottom">
+                    <el-button type="text" class="button">Раскрыть полностью</el-button>
+                    <span class="card_text">{{ name }}</span>
+                  </div>
+                </div>
+              </el-card> 
+            </el-col>
+          </el-row>
       </div>
     </div>
   </div>
@@ -100,6 +145,7 @@ export default {
       arcticle_data: [],
       is_error: false,
       is_chered: true,
+      
       lorem200:
         "lorem  perspiciatis quod aut ex. Fugiat obcaecat est vel vis! Recusandae numquam voluptatem deserunt ducimus dolorem harum esse reiciendis sequi ut beatae rerum sunt molestiae ipsum nihil ab nesciunt magnam nemo ea totam obcaecati assumenda praesentium, saepe, molestias illum! Nihil corporis quae, quisquam obcaecati architecto similique. Dolor impedit itaque minus veniam animi? Quibusdam ea recusandae velit non autem? Impedit, ipsa? Illo, impedit. Qui, perspiciatis vero iste accusamus assumenda nobis fuga nihil voluptate dolor distinctio! Saepe qui sequi ut aliquam, velit tempora ad ab cupiditate? At consequuntur quia unde quibusdam tenetur reprehenderit magni culpa, reiciendis asperiores temporibus deserunt suscipit magnam quidem saepe amet consectetur tempora autem harum doloremque recusandae nulla minus. Ullam!",
     };
@@ -140,11 +186,37 @@ export default {
     this.get_data_for_article(this.$route.params.city);
     document.title = "page title";
   },
-  components: {},
+  components: {
+  },
 };
 </script>
 
 <style lang="scss" scoped>
+.card_text {
+    position: relative;
+    top: -60px;
+    line-height: 25px;
+    font-size: 27px;
+    color: #fff;
+  }
+.bottom {
+  margin-top: 13px;
+  line-height: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.button {
+  padding: 0;
+  min-height: auto;
+}
+
+.image {
+  width: 100%;
+  display: block;
+}
+
 .author-sign {
   padding-top: 20px;
   a {
@@ -160,6 +232,10 @@ export default {
 .article-label-a {
   font-size: 35px;
   font-family: fantasy;
+  text-transform: capitalize;
+}
+.carousel-img {
+  object-fit: cover;
 }
 .article-label {
 }
