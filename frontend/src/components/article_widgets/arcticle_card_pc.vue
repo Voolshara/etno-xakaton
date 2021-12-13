@@ -33,8 +33,21 @@
                   {{ text }}
                 </p>
               </div>
-              <img :src="article['img']['H1'][0]" />
             </div>
+            <el-carousel
+              height="200px"
+              direction="vertical"
+              :autoplay="true"
+              v-if="article['img']['H1'].length >= 1"
+            >
+              <el-carousel-item
+                v-for="item in article['img']['H1']"
+                :key="item"
+                :style="{ backgroundImage: `url(/img/${item})` }"
+              >
+                <h3 class="medium">{{ item }}</h3>
+              </el-carousel-item>
+            </el-carousel>
             <div class="author-sign">
               <a style="color: rgb(207, 185, 158)"
                 >~ {{ article["author"]["name"] }}</a
@@ -48,13 +61,26 @@
               <a class="article-label-a"> {{ article["label"] }} </a>
             </div>
             <div class="article-content">
-              <img :src="article['img']['H1'][0]" />
               <div id="text">
                 <p v-for="text in article['full_text']" :key="text">
                   {{ text }}
                 </p>
               </div>
             </div>
+            <el-carousel
+              height="200px"
+              direction="vertical"
+              :autoplay="true"
+              v-if="article['img']['H1'].length >= 1"
+            >
+              <el-carousel-item
+                v-for="item in article['img']['H1']"
+                :key="item"
+                :style="{ backgroundImage: `url(/img/${item})` }"
+              >
+                <h3 class="medium">{{ item }}</h3>
+              </el-carousel-item>
+            </el-carousel>
             <div class="author-sign">
               <a style="color: rgb(151 87 2)"
                 >~{{ article["author"]["name"] }}</a
@@ -63,27 +89,11 @@
           </div>
         </div>
       </div>
-      <el-carousel indicator-position="none" height="50vw">
-        <el-carousel-item
-          v-for="element in arcticle_data"
-          :key="element"
-          pause-on-hover="true"
-        >
-          <div class="cards-container">
-            <Main_text
-              :text="this.lorem200"
-              :img="element['img']"
-              :label="element['label']"
-            />
-          </div>
-        </el-carousel-item>
-      </el-carousel>
     </div>
   </div>
 </template>
 
 <script>
-import Main_text from "@/components/article_widgets/main_text.vue";
 export default {
   data() {
     return {
@@ -91,7 +101,7 @@ export default {
       is_error: false,
       is_chered: true,
       lorem200:
-        "lorem  perspiciatis quod aut ex. Fugiat obcaecati est vel vitae deserunt! Sunt ipsum deleniti eos! Recusandae numquam voluptatem deserunt ducimus dolorem harum esse reiciendis sequi ut beatae rerum sunt molestiae ipsum nihil ab nesciunt magnam nemo ea totam obcaecati assumenda praesentium, saepe, molestias illum! Nihil corporis quae, quisquam obcaecati architecto similique. Dolor impedit itaque minus veniam animi? Quibusdam ea recusandae velit non autem? Impedit, ipsa? Illo, impedit. Qui, perspiciatis vero iste accusamus assumenda nobis fuga nihil voluptate dolor distinctio! Saepe qui sequi ut aliquam, velit tempora ad ab cupiditate? At consequuntur quia unde quibusdam tenetur reprehenderit magni culpa, reiciendis asperiores temporibus deserunt suscipit magnam quidem saepe amet consectetur tempora autem harum doloremque recusandae nulla minus. Ullam!",
+        "lorem  perspiciatis quod aut ex. Fugiat obcaecat est vel vis! Recusandae numquam voluptatem deserunt ducimus dolorem harum esse reiciendis sequi ut beatae rerum sunt molestiae ipsum nihil ab nesciunt magnam nemo ea totam obcaecati assumenda praesentium, saepe, molestias illum! Nihil corporis quae, quisquam obcaecati architecto similique. Dolor impedit itaque minus veniam animi? Quibusdam ea recusandae velit non autem? Impedit, ipsa? Illo, impedit. Qui, perspiciatis vero iste accusamus assumenda nobis fuga nihil voluptate dolor distinctio! Saepe qui sequi ut aliquam, velit tempora ad ab cupiditate? At consequuntur quia unde quibusdam tenetur reprehenderit magni culpa, reiciendis asperiores temporibus deserunt suscipit magnam quidem saepe amet consectetur tempora autem harum doloremque recusandae nulla minus. Ullam!",
     };
   },
   methods: {
@@ -130,9 +140,7 @@ export default {
     this.get_data_for_article(this.$route.params.city);
     document.title = "page title";
   },
-  components: {
-    Main_text,
-  },
+  components: {},
 };
 </script>
 
