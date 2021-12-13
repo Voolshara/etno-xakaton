@@ -17,6 +17,10 @@ const routes = [
     path: "/city/:city",
     component: () => import("@/routes/city.vue"),
   },
+  {
+    path: "/about",
+    component: () => import("@/routes/about.vue"),
+  },
 ];
 
 // 3. Create the router instance and pass the `routes` option
