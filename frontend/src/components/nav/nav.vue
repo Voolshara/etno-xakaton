@@ -77,7 +77,6 @@ export default {
 }
 .nav {
   margin: 0px auto;
-  margin-top: 7px;
   align-items: center;
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1), 0 0;
   margin-bottom: 7px;

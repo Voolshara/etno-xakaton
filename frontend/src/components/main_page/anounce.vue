@@ -17,7 +17,6 @@
         стало более 1000 человек. Проект продолжается…
       </div>
     </div>
-    <hr />
   </div>
 </template>
 
@@ -25,14 +24,14 @@
 .main-block-anounce {
   margin-top: 7px;
   margin-bottom: 30px;
-  font-size: 25px;
+  font-size: 30px;
   font-family: "Yanone Kaffeesatz", sans-serif;
-  text-align: left;
+  text-align: center;
 
   .anounce-block {
     font-size: 19px;
-    width: 80%;
-    font-family: "Caveat", cursive;
+    width: 100%;
+    font-family: "Montserrat", sans-serif;
   }
 }
 </style>
