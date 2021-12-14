@@ -18,6 +18,20 @@
         </div>
       </section>
       <div
+        v-if="this.$route.params.city == 'kazan'"
+        style="margin: 0 -15px -5px -15px"
+      >
+        <iframe
+          width="100%"
+          height="650px"
+          src="https://www.youtube-nocookie.com/embed/D7XGLSmPTZ0"
+          title="КАЗАНЬ"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
+      <div
         v-for="(article, index) in arcticle_data['parts']"
         :key="(article, index)"
       >
@@ -58,22 +72,24 @@
               </el-carousel-item>
             </el-carousel>
             <swiper
-      v-if="article['cards'].length > 0"
-      :slides-per-view="3"
-      :space-between="0"
-      class="swiper"
-    >
-      <swiper-slide v-for="element in article['cards']" v-bind:key="element"
-        ><CardPC
-          :name="element['label']"
-          :img="element['img']"
-          :full_text="element['full_text']"
-          :author="element['author']"
-      /></swiper-slide>
-    </swiper>
-      <div v-if="article['label'] == 'карта'" class="andry-for-u">
-        <Map :data="map[this.$route.params.city]" />
-      </div>
+              v-if="article['cards'].length > 0"
+              :slides-per-view="3"
+              :space-between="0"
+              class="swiper"
+            >
+              <swiper-slide
+                v-for="element in article['cards']"
+                v-bind:key="element"
+                ><CardPC
+                  :name="element['label']"
+                  :img="element['img']"
+                  :full_text="element['full_text']"
+                  :author="element['author']"
+              /></swiper-slide>
+            </swiper>
+            <div v-if="article['label'] == 'карта'" class="andry-for-u">
+              <Map :data="map[this.$route.params.city]" />
+            </div>
             <div class="author-sign">
               <a style="color: rgb(60 60 60)"
                 >~ {{ article["author"]["name"] }}</a
@@ -82,7 +98,10 @@
           </div>
         </div>
         <div v-else>
-          <div class="article-container" style="background-color: rgb(255 229 198)">
+          <div
+            class="article-container"
+            style="background-color: rgb(255 229 198)"
+          >
             <div class="aritcle-label">
               <a class="article-label-a"> {{ article["label"] }} </a>
             </div>
@@ -117,23 +136,25 @@
                 />
               </el-carousel-item>
             </el-carousel>
-             <swiper
-      v-if="article['cards'].length > 0"
-      :slides-per-view="3"
-      :space-between="0"
-      class="swiper"
-    >
-      <swiper-slide v-for="element in article['cards']" v-bind:key="element"
-        ><CardPC
-          :name="element['label']"
-          :img="element['img']"
-          :full_text="element['full_text']"
-          :author="element['author']"
-      /></swiper-slide>
-    </swiper>
-    <div v-if="article['label'] == 'карта'" class="andry-for-u">
-        <Map :is_PC="true" :data="map[this.$route.params.city]" />
-      </div>
+            <swiper
+              v-if="article['cards'].length > 0"
+              :slides-per-view="3"
+              :space-between="0"
+              class="swiper"
+            >
+              <swiper-slide
+                v-for="element in article['cards']"
+                v-bind:key="element"
+                ><CardPC
+                  :name="element['label']"
+                  :img="element['img']"
+                  :full_text="element['full_text']"
+                  :author="element['author']"
+              /></swiper-slide>
+            </swiper>
+            <div v-if="article['label'] == 'карта'" class="andry-for-u">
+              <Map :is_PC="true" :data="map[this.$route.params.city]" />
+            </div>
             <div class="author-sign">
               <a style="color: rgb(151 87 2)"
                 >~{{ article["author"]["name"] }}</a
@@ -143,14 +164,13 @@
         </div>
       </div>
     </div>
-    <iframe width="100%" height="500px" src="https://www.youtube-nocookie.com/embed/zrUvwQKAixQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   </div>
 </template>
 
 <script>
 import { Swiper, SwiperSlide } from "swiper/vue";
 import "swiper/swiper.min.css";
-import CardPC from "@/components/article_widgets/article_card_pc_poca.vue"
+import CardPC from "@/components/article_widgets/article_card_pc_poca.vue";
 import Map from "@/components/article_widgets/map.vue";
 export default {
   data() {
@@ -174,7 +194,7 @@ export default {
           [56.139918, 47.247728],
         ],
       },
-      
+
       lorem200:
         "lorem  perspiciatis quod aut ex. Fugiat obcaecat est vel vis! Recusandae numquam voluptatem deserunt ducimus dolorem harum esse reiciendis sequi ut beatae rerum sunt molestiae ipsum nihil ab nesciunt magnam nemo ea totam obcaecati assumenda praesentium, saepe, molestias illum! Nihil corporis quae, quisquam obcaecati architecto similique. Dolor impedit itaque minus veniam animi? Quibusdam ea recusandae velit non autem? Impedit, ipsa? Illo, impedit. Qui, perspiciatis vero iste accusamus assumenda nobis fuga nihil voluptate dolor distinctio! Saepe qui sequi ut aliquam, velit tempora ad ab cupiditate? At consequuntur quia unde quibusdam tenetur reprehenderit magni culpa, reiciendis asperiores temporibus deserunt suscipit magnam quidem saepe amet consectetur tempora autem harum doloremque recusandae nulla minus. Ullam!",
     };
@@ -218,14 +238,14 @@ export default {
   components: {
     CardPC,
     Map,
-    Swiper, 
+    Swiper,
     SwiperSlide,
-      },
+  },
 };
 </script>
 
 <style lang="scss" scoped>
-.andry-for-u{
+.andry-for-u {
   margin: 0;
   margin-left: -5px;
 }
@@ -234,12 +254,12 @@ export default {
   margin-right: 0;
 }
 .card_text {
-    position: relative;
-    top: -60px;
-    line-height: 25px;
-    font-size: 27px;
-    color: #fff;
-  }
+  position: relative;
+  top: -60px;
+  line-height: 25px;
+  font-size: 27px;
+  color: #fff;
+}
 .bottom {
   margin-top: 13px;
   line-height: 12px;
@@ -290,7 +310,7 @@ export default {
   p {
     color: black;
     font-family: "Oswald", sans-serif;
-    font-size: 16px;
+    font-size: 22px;
     line-height: 26px;
     text-indent: 30px;
     margin: 0;

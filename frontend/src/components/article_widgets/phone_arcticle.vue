@@ -9,6 +9,20 @@
           <div class="city-name">{{ name }}</div>
         </div>
       </div>
+      <div
+        v-if="this.$route.params.city == 'kazan'"
+        style="margin: 0 -15px -5px -15px"
+      >
+        <iframe
+          width="100%"
+          height="650px"
+          src="https://www.youtube-nocookie.com/embed/D7XGLSmPTZ0"
+          title="КАЗАНЬ"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
       <div class="information" v-for="el in parts" :key="el">
         <Element v-if="el['label'] != 'карта'" :data="el" />
         <Map v-else :is_PC="false" :data="map[this.$route.params.city]" />

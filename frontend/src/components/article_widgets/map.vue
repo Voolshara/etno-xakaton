@@ -1,6 +1,6 @@
 <template>
   <div class="map-wrapper">
-    <div v-if="is_PC" style="display: none;" class="text"></div>
+    <div v-if="is_PC" style="display: none" class="text"></div>
     <div v-else class="text">~Наше путешествие</div>
     <div id="map" class="map"></div>
   </div>
