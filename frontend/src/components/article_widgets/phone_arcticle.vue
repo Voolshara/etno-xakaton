@@ -11,7 +11,7 @@
       </div>
       <div class="information" v-for="el in parts" :key="el">
         <Element v-if="el['label'] != 'карта'" :data="el" />
-        <Map v-else :data="map[this.$route.params.city]" />
+        <Map v-else :is_PC="false" :data="map[this.$route.params.city]" />
       </div>
     </div>
   </div>

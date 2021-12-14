@@ -36,7 +36,7 @@
             <el-carousel
               type="card"
               height="20vw"
-              margin-top="15px"
+              margin-top="30px"
               arrow="never"
               indicator-position="none"
               v-if="article[`img`][`H1`].length > 0"
@@ -57,6 +57,23 @@
                 />
               </el-carousel-item>
             </el-carousel>
+            <swiper
+      v-if="article['cards'].length > 0"
+      :slides-per-view="3"
+      :space-between="0"
+      class="swiper"
+    >
+      <swiper-slide v-for="element in article['cards']" v-bind:key="element"
+        ><CardPC
+          :name="element['label']"
+          :img="element['img']"
+          :full_text="element['full_text']"
+          :author="element['author']"
+      /></swiper-slide>
+    </swiper>
+      <div v-if="article['label'] == 'карта'" class="andry-for-u">
+        <Map :data="map[this.$route.params.city]" />
+      </div>
             <div class="author-sign">
               <a style="color: rgb(60 60 60)"
                 >~ {{ article["author"]["name"] }}</a
@@ -65,7 +82,7 @@
           </div>
         </div>
         <div v-else>
-          <div class="article-container" style="background-color: #cfb99e">
+          <div class="article-container" style="background-color: rgb(255 229 198)">
             <div class="aritcle-label">
               <a class="article-label-a"> {{ article["label"] }} </a>
             </div>
@@ -79,7 +96,7 @@
             <el-carousel
               type="card"
               height="20vw"
-              margin-top="15px"
+              margin-top="30px"
               arrow="never"
               indicator-position="none"
               v-if="article[`img`][`H1`].length > 0"
@@ -100,6 +117,23 @@
                 />
               </el-carousel-item>
             </el-carousel>
+             <swiper
+      v-if="article['cards'].length > 0"
+      :slides-per-view="3"
+      :space-between="0"
+      class="swiper"
+    >
+      <swiper-slide v-for="element in article['cards']" v-bind:key="element"
+        ><CardPC
+          :name="element['label']"
+          :img="element['img']"
+          :full_text="element['full_text']"
+          :author="element['author']"
+      /></swiper-slide>
+    </swiper>
+    <div v-if="article['label'] == 'карта'" class="andry-for-u">
+        <Map :is_PC="true" :data="map[this.$route.params.city]" />
+      </div>
             <div class="author-sign">
               <a style="color: rgb(151 87 2)"
                 >~{{ article["author"]["name"] }}</a
@@ -107,44 +141,39 @@
             </div>
           </div>
         </div>
-          <el-row>
-            <el-col
-              v-for="item in article['cards']"
-              :key="item"
-              :span="8"
-              :offset="index > 0 ? 2 : 0"
-              >
-              <el-card :body-style="{ padding: '40px' }" :shadow='hower'>
-                <img
-                  src="/img/БЛИН.jpg"
-                  class="image"
-                />
-                <div style="padding: 14px">
-                  <span>
-                    <a style="font-size: 35px; font-family: fantasy; text-transform: capitalize;">
-                      {{item['label']}}
-                    </a>
-                  </span>
-                  <div class="bottom">
-                    <el-button type="text" class="button">Раскрыть полностью</el-button>
-                    <span class="card_text">{{ name }}</span>
-                  </div>
-                </div>
-              </el-card> 
-            </el-col>
-          </el-row>
       </div>
     </div>
+    <iframe width="100%" height="500px" src="https://www.youtube-nocookie.com/embed/zrUvwQKAixQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   </div>
 </template>
 
 <script>
+import { Swiper, SwiperSlide } from "swiper/vue";
+import "swiper/swiper.min.css";
+import CardPC from "@/components/article_widgets/article_card_pc_poca.vue"
+import Map from "@/components/article_widgets/map.vue";
 export default {
   data() {
     return {
       arcticle_data: [],
       is_error: false,
       is_chered: true,
+      map: {
+        kazan: [
+          [56.139918, 47.247728],
+          [55.781469, 49.133238],
+          [55.789821, 49.110465],
+          [55.788054, 49.123837],
+          [55.792392, 49.11148],
+          [55.800427, 49.111939],
+          [55.799214, 49.106144],
+          [55.795858, 49.109599],
+          [55.796553, 49.108077],
+          [55.798321, 49.105189],
+          [55.800501, 49.105184],
+          [56.139918, 47.247728],
+        ],
+      },
       
       lorem200:
         "lorem  perspiciatis quod aut ex. Fugiat obcaecat est vel vis! Recusandae numquam voluptatem deserunt ducimus dolorem harum esse reiciendis sequi ut beatae rerum sunt molestiae ipsum nihil ab nesciunt magnam nemo ea totam obcaecati assumenda praesentium, saepe, molestias illum! Nihil corporis quae, quisquam obcaecati architecto similique. Dolor impedit itaque minus veniam animi? Quibusdam ea recusandae velit non autem? Impedit, ipsa? Illo, impedit. Qui, perspiciatis vero iste accusamus assumenda nobis fuga nihil voluptate dolor distinctio! Saepe qui sequi ut aliquam, velit tempora ad ab cupiditate? At consequuntur quia unde quibusdam tenetur reprehenderit magni culpa, reiciendis asperiores temporibus deserunt suscipit magnam quidem saepe amet consectetur tempora autem harum doloremque recusandae nulla minus. Ullam!",
@@ -187,11 +216,23 @@ export default {
     document.title = "page title";
   },
   components: {
-  },
+    CardPC,
+    Map,
+    Swiper, 
+    SwiperSlide,
+      },
 };
 </script>
 
 <style lang="scss" scoped>
+.andry-for-u{
+  margin: 0;
+  margin-left: -5px;
+}
+.swiper {
+  margin-left: 0;
+  margin-right: 0;
+}
 .card_text {
     position: relative;
     top: -60px;
@@ -227,6 +268,7 @@ export default {
 .article-container {
   padding: 20px;
   background-color: azure;
+  margin: 0 -15px;
 }
 
 .article-label-a {
@@ -244,6 +286,7 @@ export default {
   display: flex;
   text-indent: 25px;
   padding-top: 30px;
+  margin-bottom: 30px;
   p {
     color: black;
     font-family: "Oswald", sans-serif;

@@ -2,7 +2,7 @@
   <el-popover
     v-model:visible="is_show"
     :title="name"
-    :width="300"
+    :width="500"
     :content="full_text[0]"
   >
     <template #reference>
@@ -25,12 +25,12 @@
   }
 
   .card_img {
-    width: 30vw;
+    width: 5vw;
     height: 200px;
     border-radius: 20px;
   }
 
-  width: 30vw;
+  width: 100vw;
   height: 200px;
 }
 </style>
