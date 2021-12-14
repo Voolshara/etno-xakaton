@@ -1,6 +1,7 @@
 <template>
   <div class="map-wrapper">
-    <div class="text">~ Нашe Путешествие</div>
+    <div v-if="is_PC" style="display: none;" class="text"></div>
+    <div v-else class="text">~Наше путешествие</div>
     <div id="map" class="map"></div>
   </div>
 </template>
@@ -11,6 +12,7 @@ export default {
   name: "Map",
   props: {
     data: Array,
+    is_PC: Boolean,
   },
   async mounted() {
     var data_map = this.data;

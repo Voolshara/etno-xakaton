@@ -22,9 +22,13 @@ export default {
     return {
       menu: [
         { img: "/img/house.png", text: "Главная", link: "/" },
-        { img: "/img/map.png", text: "Города", link: "/" },
-        { img: "/img/person.png", text: "О нас", link: "/" },
-        { img: "/img/book.png", text: "Наша школа", link: "/" },
+        { img: "/img/location.png", text: "Чебоксары", link: "/city/cheboksary" },
+        { img: "/img/location.png", text: "Нижний Новгород", link: "/city/nizhny" },
+        { img: "/img/location.png", text: "Казань", link: "/city/kazan" },
+        { img: "/img/location.png", text: "Саранск", link: "/city/Саранск" },
+        { img: "/img/location.png", text: "Йошкар-Ола", link: "/city/Йошкар-Ола" },
+        { img: "/img/person.png", text: "О нас", link: "/about" },
+        { img: "/img/book.png", text: "Наша школа", link: "/school" },
       ],
     };
   },
@@ -62,8 +66,8 @@ export default {
 .nav-card {
   /* display: none; */
   position: absolute;
-  margin-top: 140px;
-  width: 220px;
+  margin-top: 350px;
+  width: 300px;
   right: -10px;
 
   display: flex;

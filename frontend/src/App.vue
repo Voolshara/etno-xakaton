@@ -25,11 +25,12 @@ export default {
 @import url("https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@600&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 ::-webkit-scrollbar {
   width: 0;
 }
 #app {
-  font-family: "Caveat", cursive;
+  font-family: 'Montserrat', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
