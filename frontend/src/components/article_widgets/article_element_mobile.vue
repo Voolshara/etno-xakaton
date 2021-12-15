@@ -3,7 +3,7 @@
     <div class="label">~ {{ data["label"] }}</div>
     <div class="main-text" v-for="n in data['full_text'].length" :key="n">
       <p>
-        {{ data["full_text"][n] }}
+        {{ data["full_text"][n - 1] }}
         <el-image
           v-if="n < data['img']['H1'].length"
           :src="'/img/' + data['img']['H1'][n]"

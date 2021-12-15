@@ -54,6 +54,20 @@ export default {
           [55.800501, 49.105184],
           [56.139918, 47.247728],
         ],
+        nizhny: [
+          [56.139918, 47.247728],
+          [56.3167035, 44.0289783],
+          [56.3263685, 44.0035651],
+          [56.3191524, 43.9867871],
+          [56.3198324, 43.995794],
+          [56.32824, 43.9852365],
+          [56.3278669, 44.0208546],
+          [56.3283856, 43.9612387],
+          [56.327563, 44.0045368],
+          [56.3263723, 43.9874665],
+          [56.3263723, 43.9874665],
+          [56.139918, 47.247728],
+        ],
       },
     };
   },
@@ -78,6 +92,7 @@ export default {
       })
         .then((response) => response.json())
         .then((data) => {
+          console.log(data);
           if (data["meta"]["status"] == "error") {
             this.is_error = true;
           } else {
@@ -96,6 +111,7 @@ export default {
     },
   },
   mounted() {
+    console.log(this.$route.params.city);
     this.get_data_for_article(this.$route.params.city);
   },
 };

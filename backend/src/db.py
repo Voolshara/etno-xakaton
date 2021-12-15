@@ -297,7 +297,8 @@ class DB_new:
             return session.query(Longrid_Parts).filter(and_(
                 Longrid_Parts.name == name,
                 Longrid_Parts.description == desc,
-                Longrid_Parts.author_id == author_id
+                Longrid_Parts.author_id == author_id,
+                Longrid_Parts.full_text ==full_text_arr
             )).first().id
 
     def bind_longrid_part(self, id_article, longrid_part_id):
@@ -329,15 +330,15 @@ class DB_new:
             self.bind_longrid_part(id_article, longrid_part)
             return id_article
 
-    def create_new_article(self, name, router):
+    def create_new_article(self, name, router, gerb_img, bg_img):
         with create_session() as session:
             session.add(Articles(
                 name = name,
                 description = "",
                 img = "",
                 router = router,
-                gerb_img = "",
-                bg_img = ""
+                gerb_img = gerb_img,
+                bg_img = bg_img
             ))
             session.query(Articles).filter(Articles.router == router).one()
 
