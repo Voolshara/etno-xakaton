@@ -1,69 +1,124 @@
 <template>
-  <div class="defilee__outer">
-    <section id="defilee" class="defilee__ctnr">
-      <div class="defilee__div defilee__div--text">
-        <h2>
-          <a
-            href="https://xn--80aapampemcchfmo7a3c9ehj.xn--p1ai/"
-            style="text-decoration: none"
-          >
-            <img src="/img/nac_project.png" alt="Avatar for user 3" />
-          </a>
-        </h2>
-      </div>
-      <div class="defilee__div defilee__div--special2">
-        <img src="/img/БЛИН.jpg" alt="Avatar for user 1" />
-        <p>Hi, I'm Lora!</p>
-      </div>
-      <div class="defilee__div defilee__div--special">
-        aoQ4DYZLE_E
-        <img src="/img/БЛИН.jpg" alt="Avatar for user 2" />
-        <p>Hello, I'm Steve.</p>
-      </div>
-      <div class="defilee__div defilee__div--special1 first">
-        <img src="/img/БЛИН.jpg" alt="Avatar for user 3" />
-        <p>I'm the boss.</p>
-      </div>
-      <div class="defilee__div defilee__div--special3">
-        <img src="/img/БЛИН.jpg" alt="Avatar for user 4" />
-        <p>One word - Warrior.</p>
-      </div>
-      <div class="defilee__div defilee__div--special4">
-        <img src="/img/БЛИН.jpg" alt="Avatar for user 5" />
-        <p>Brave & Humble</p>
-      </div>
-      <div class="defilee__div defilee__div--special1">
-        <img src="/img/БЛИН.jpg" alt="Avatar for user 6" />
-        <p>Girl in Love</p>
-      </div>
-      <div class="defilee__div">
-        <img src="/img/БЛИН.jpg" alt="Avatar for user 7" />
-        <p>The Friendliest One</p>
-      </div>
-      <div class="defilee__div defilee__div--text">
-        <h2>
-          <a
-            href="https://xn--80aapampemcchfmo7a3c9ehj.xn--p1ai/"
-            style="text-decoration: none"
-          >
-            <img src="/img/nac_project.png" alt="Avatar for user 3" />
-          </a>
-        </h2>
-      </div>
-      <div class="defilee__div defilee__div--special3">
-        <img src="/img/БЛИН.jpg" alt="Avatar for user 8" />
-        <p>Christina.</p>
-      </div>
-      <div class="defilee__div defilee__div--special1">
-        <img src="/img/БЛИН.jpg" alt="Avatar for user 9" />
-        <p>George</p>
-      </div>
-    </section>
+  <div>
+    <div class="defilee__outer">
+      <section id="defilee" class="defilee__ctnr">
+        <div v-for="element in members" :key="element" :class="element[2]">
+          <img :src="element[0]" alt="Avatar for user 1" />
+          <p>{{ element[1] }}</p>
+        </div>
+        <div class="defilee__div defilee__div--text">
+          <h2>
+            <a
+              href="https://xn--80aapampemcchfmo7a3c9ehj.xn--p1ai/"
+              style="text-decoration: none"
+            >
+              <img src="/img/nac_project.png" alt="Avatar for user 3" />
+            </a>
+          </h2>
+        </div>
+      </section>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
+  data() {
+    return {
+      members: [
+        [
+          "/img/members/gym/АлексееваАрина.jpg",
+          " АлексееваАрина",
+          "defilee__div defilee__div--special4",
+        ],
+        [
+          "/img/members/gym/АндрееваЮлия.jpg",
+          "Андреева Юлия",
+          "defilee__div defilee__div--special1",
+        ],
+        [
+          "/img/members/gym/АфанасьеваДарья.jpg",
+          "Афанасьева Дарья",
+          "defilee__div defilee__div--special3",
+        ],
+        [
+          "/img/members/gym/ВикторовнаСветлана.jpg",
+          "Викторовна Светлана",
+          "defilee__div defilee__div--special2",
+        ],
+        [
+          "/img/members/gym/ГолубеваВалерия.jpg",
+          "Голубева Валерия",
+          "defilee__div defilee__div--special1",
+        ],
+        [
+          "/img/members/gym/ГригоркинаПолина.jpg",
+          "Григоркина Полина",
+          "defilee__div defilee__div--special3",
+        ],
+        [
+          "/img/members/gym/ИгнатьевАртём.jpg",
+          "Игнатьев Артём",
+          "defilee__div defilee__div--special4",
+        ],
+        [
+          "/img/members/gym/КиргизоваЮлия.jpg",
+          "Киргизова Юлия",
+          "defilee__div defilee__div--special1",
+        ],
+        [
+          "/img/members/gym/КолесоваЯна.jpg",
+          "Колесова Яна",
+          "defilee__div defilee__div--special2",
+        ],
+        [
+          "/img/members/gym/МихайловаАлиса.jpg",
+          "Михайлова Алиса",
+          "defilee__div defilee__div--special4",
+        ],
+        [
+          "/img/members/gym/МолодцоваАрина.jpg",
+          "Молодцова Арина",
+          "defilee__div defilee__div--special3",
+        ],
+        [
+          "/img/members/gym/МурзинаЖанна.jpg",
+          "Мурзина Жанна",
+          "defilee__div defilee__div--special2",
+        ],
+        [
+          "/img/members/gym/НикитинаДарья.jpg",
+          "Никитина Дарья",
+          "defilee__div defilee__div--special1",
+        ],
+        [
+          "/img/members/gym/НиколаеваВалентина.jpg",
+          "Николаева Валентина",
+          "defilee__div defilee__div--special3",
+        ],
+        [
+          "/img/members/gym/ПавловРоман.jpg",
+          "Павлов Роман",
+          "defilee__div defilee__div--special4",
+        ],
+        [
+          "/img/members/gym/СеменоваАнастасия.jpg",
+          "Семенова Анастасия",
+          "defilee__div defilee__div--special2",
+        ],
+        [
+          "/img/members/gym/ТитарчукВалерий.jpg",
+          "Титарчук Валерий",
+          "defilee__div defilee__div--special1",
+        ],
+        [
+          "/img/members/gym/ХадиеваСофия.jpg",
+          "Хадиева София",
+          "defilee__div defilee__div--special3",
+        ],
+      ],
+    };
+  },
   mounted() {
     //Forked by https://codepen.io/pehaa/pen/abvyeBo
     class Defilee {

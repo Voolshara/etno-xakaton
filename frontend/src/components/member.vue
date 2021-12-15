@@ -15,18 +15,11 @@ export default {
   },
 };
 </script>
-<style lang="scss">
-.img {
-  border-radius: 15px;
-}
-.about_head {
-  margin-bottom: 100px;
-}
 
+<style>
 .member_name {
   font-size: 40px;
 }
-
 .one_member {
   margin-top: 20px;
   margin-bottom: 20px;

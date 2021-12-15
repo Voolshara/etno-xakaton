@@ -2,10 +2,14 @@
   <el-row class="nav">
     <el-col :span="6">
       <el-image
-        style="width: 50px; height: 50px"
+        style="width: 50px; height: 50px; padding-right: 10px"
         :src="'/img/horse.jpg'"
-      ></el-image
-    ></el-col>
+      ></el-image>
+      <el-image
+        style="width: 50px; height: 50px; padding-right: 10px"
+        :src="'/img/sosh61.png'"
+      ></el-image>
+    </el-col>
     <el-col :span="12"
       ><router-link to="/" style="text-decoration: none; color: black"
         ><div class="etno-name">Этно-Xakaton</div></router-link
