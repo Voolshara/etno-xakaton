@@ -18,8 +18,26 @@
           allowfullscreen
         ></iframe>
       </div>
+      <h2>Наша школа</h2>
+      <div class="block">
+        <img src="/img/school_61.jpg" />
+
+        <div class="block__text">
+          <div style="margin: 0 30px; margin-top: 20%">
+            <h3>СОШ №61</h3>
+            <a 
+              >Муниципальное автономное общеобразовательное учреждение "Средняя
+              общеобразовательная школа №61" муниципального образования города
+              Чебоксары - столицы Чувашской Республики</a
+            >
+            <router-link :to="`/school`" style="text-decoration: none">
+              <p><el-button type="info" plain>Подробнее</el-button></p>
+            </router-link>
+          </div>
+        </div>
+      </div>
       <!-- <div class="border animate__animated animate__fadeIn"></div> -->
-      <h2>Михуил</h2>
+      <h2>Наша команда</h2>
       <Team />
     </div>
   </div>
@@ -55,9 +73,48 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
+.block {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  height: 75vh;
+}
+
+.block img {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.block__text {
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #cecece;
+  opacity: 0;
+  -webkit-transition: all 0.7s ease-in-out;
+  -moz-transition: all 0.7s ease-in-out;
+  -ms-transition: all 0.7s ease-in-out;
+  -o-transition: all 0.7s ease-in-out;
+  transition: all 0.7s ease-in-out;
+  height: 100%;
+  font-size: 20px;
+}
+
+.block:hover .block__text {
+  opacity: 0.9;
+}
 h2 {
-  font-size: 30px;
+  margin-top: 7px;
+  margin: 80px 0 10px 0;
+  font-size: 35px;
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  text-align: center;
 }
 .s1 {
   animation-duration: 0.6s;

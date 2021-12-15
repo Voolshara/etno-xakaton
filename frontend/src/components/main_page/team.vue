@@ -28,7 +28,7 @@ export default {
       members: [
         [
           "/img/members/gym/АлексееваАрина.jpg",
-          " АлексееваАрина",
+          " Алексеева Арина",
           "defilee__div defilee__div--special4",
         ],
         [
