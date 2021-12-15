@@ -19,6 +19,7 @@
         ></iframe>
       </div>
       <!-- <div class="border animate__animated animate__fadeIn"></div> -->
+      <h2>Михуил</h2>
       <Team />
     </div>
   </div>
@@ -55,6 +56,9 @@ export default {
 </script>
 
 <style lang="scss">
+h2 {
+  font-size: 30px;
+}
 .s1 {
   animation-duration: 0.6s;
 }

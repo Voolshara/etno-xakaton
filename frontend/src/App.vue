@@ -1,6 +1,6 @@
 <template>
   <el-container id="app">
-    <el-header><NavEl /></el-header>
+    <el-header style="padding-bottom: 100px"><NavEl /></el-header>
     <el-main style="--el-main-padding: 15px" class="test">
       <BG class="background" />
       <router-view />
@@ -24,13 +24,13 @@ export default {
 @import url("https://fonts.googleapis.com/css2?family=Caveat:wght@500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@600&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 ::-webkit-scrollbar {
   width: 0;
 }
 #app {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;

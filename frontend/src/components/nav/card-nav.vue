@@ -22,11 +22,27 @@ export default {
     return {
       menu: [
         { img: "/img/house.png", text: "Главная", link: "/" },
-        { img: "/img/location.png", text: "Чебоксары", link: "/city/cheboksary" },
-        { img: "/img/location.png", text: "Нижний Новгород", link: "/city/nizhny" },
-        { img: "/img/location.png", text: "Казань", link: "/city/kazan" },
-        { img: "/img/location.png", text: "Саранск", link: "/city/Саранск" },
-        { img: "/img/location.png", text: "Йошкар-Ола", link: "/city/Йошкар-Ола" },
+        {
+          img: "/img/city/chuvash.png",
+          text: "Чебоксары",
+          link: "/city/cheboksary",
+        },
+        {
+          img: "/img/city/NN.png",
+          text: "Нижний Новгород",
+          link: "/city/nizhny",
+        },
+        { img: "/img/city/kazan.png", text: "Казань", link: "/city/kazan" },
+        {
+          img: "/img/city/saransk.png",
+          text: "Саранск",
+          link: "/city/Саранск",
+        },
+        {
+          img: "/img/city/ola.png",
+          text: "Йошкар-Ола",
+          link: "/city/Йошкар-Ола",
+        },
         { img: "/img/person.png", text: "О нас", link: "/about" },
         { img: "/img/book.png", text: "Наша школа", link: "/school" },
       ],
@@ -55,11 +71,12 @@ export default {
 .menu-text {
   position: relative;
   top: -1px;
+  font-size: 23px;
 }
 
 .menu-img {
-  width: 20px;
-  height: 20px;
+  width: 40px;
+  height: 40px;
   margin-right: 10px;
 }
 
