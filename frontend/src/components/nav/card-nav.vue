@@ -24,7 +24,7 @@ export default {
         {
           img: "/img/city/chuvash.png",
           text: "Чебоксары",
-          link: "/city/cheboksary",
+          link: "/city/cheboxary",
         },
         {
           img: "/img/city/NN.png",
@@ -40,7 +40,7 @@ export default {
         {
           img: "/img/city/ola.png",
           text: "Йошкар-Ола",
-          link: "/city/Йошкар-Ола",
+          link: "/city/ola",
         },
         { img: "/img/person.png", text: "О нас", link: "/about" },
         { img: "/img/book.png", text: "Наша школа", link: "/school" },

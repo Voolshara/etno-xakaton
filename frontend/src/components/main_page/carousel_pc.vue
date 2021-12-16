@@ -54,7 +54,7 @@ export default {
         {
           img: "/img/chebocksary_king_city.png",
           name: "Чебоксары",
-          link: "cheboksary",
+          link: "cheboxary",
           description: "1",
         },
         {
@@ -78,7 +78,7 @@ export default {
         {
           img: "/img/esharala.png",
           name: "Йошкар-Ола",
-          link: "Йошкар-Ола",
+          link: "ola",
           description: "5",
         },
       ],
