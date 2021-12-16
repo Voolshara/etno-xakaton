@@ -157,17 +157,15 @@ export default {
         ],
         curator: [
           [
+            "/img/members/mary.jpg",
+            "Прокопьева Мария Владимировна",
+            "Куратор программистов",
+          ],
+          [
             "/img/members/gym/ВикторовнаСветлана.jpg",
             "Андреева Светлана Викторовна",
             "Куратор журналистов",
           ],
-          ["/img/members/maxim.jpg", "People", "???"],
-          ["/img/members/misha.jpg", "People", "???"],
-          ["/img/members/andrey.jpg", "People", "???"],
-          ["/img/members/d0nil.jpg", "People", "???"],
-          ["/img/members/liza.jpg", "People", "???"],
-          ["/img/members/timofey.jpg", "People", "???"],
-          ["/img/members/katya.jpg", "People", "???"],
         ],
         gym: [
           [
