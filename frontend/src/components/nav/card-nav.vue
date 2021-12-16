@@ -2,15 +2,14 @@
   <div class="nav-card">
     <el-card class="nav-card-el" :body-style="{ display: 'block' }">
       <div v-for="element in menu" :key="element" class="all-items">
-        <router-link
-          :to="element['link']"
-          style="text-decoration: none; color: black"
-        >
+        <a :href="element['link']" style="text-decoration: none; color: black">
           <div class="item">
             <el-image class="menu-img" :src="element['img']"></el-image>
-            <div class="menu-text">{{ element["text"] }}</div>
+            <div class="menu-text">
+              {{ element["text"] }}
+            </div>
           </div>
-        </router-link>
+        </a>
       </div>
     </el-card>
   </div>
@@ -36,7 +35,7 @@ export default {
         {
           img: "/img/city/saransk.png",
           text: "Саранск",
-          link: "/city/Саранск",
+          link: "/city/saransk",
         },
         {
           img: "/img/city/ola.png",
@@ -47,6 +46,11 @@ export default {
         { img: "/img/book.png", text: "Наша школа", link: "/school" },
       ],
     };
+  },
+  methods: {
+    reload: function () {
+      this.vm.$forceUpdate();
+    },
   },
 };
 </script>
