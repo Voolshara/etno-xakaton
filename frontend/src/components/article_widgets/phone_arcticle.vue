@@ -1,6 +1,6 @@
 <template>
   <div class="city-container">
-    <div v-if="is_load" class="preloader">Load</div>
+    <div v-if="is_load" class="preloader"><Loader /></div>
     <div v-else>
       <div class="preview animate__animated animate__fadeInUp">
         <el-image :src="bg_img" :fit="'cover'" class="bg_img"></el-image>
@@ -94,8 +94,10 @@
 <script>
 import Element from "@/components/article_widgets/article_element_mobile.vue";
 import Map from "@/components/article_widgets/map.vue";
+import Loader from "@/components/article_widgets/loader.vue";
+
 export default {
-  components: { Element, Map },
+  components: { Element, Map, Loader },
   data() {
     return {
       is_load: true,
@@ -148,6 +150,7 @@ export default {
           [56.139918, 47.247728],
         ],
         ola: [
+          [56.139918, 47.247728],
           [56.6270773, 47.9224419],
           [56.6316667, 47.8077778],
           [56.6316092, 47.8863032],
@@ -156,24 +159,17 @@ export default {
           [56.632816, 47.901974],
           [56.6315016, 47.8872102],
           [56.6317618, 47.8923229],
-          [56.6317618, 47.8923229],
           [56.6296916, 47.8991186],
           [56.6305322, 47.8970214],
           [56.6337065, 47.9044249],
           [56.633797, 47.9049139],
-          [56.633797, 47.9049139],
           [56.6345927, 47.9023003],
-          [56.6370675, 47.9027188],
-          [56.6359579, 47.9051745],
-          [56.6359579, 47.9051745],
-          [56.6359579, 47.9051745],
-          [56.6359579, 47.9051745],
-          [56.6368414, 47.9058989],
           [56.6374772, 47.9001761],
           [56.63715, 47.895584],
           [56.6387978, 47.878785],
           [56.639244, 47.8786277],
           [56.6300614, 47.8943319],
+          [56.139918, 47.247728],
         ],
       },
     };
@@ -207,7 +203,9 @@ export default {
             document.title = data["name"];
             this.name = data["name"];
             this.parts = data["parts"];
-            this.is_load = false;
+            setTimeout(() => {
+              this.is_load = false;
+            }, 1000);
           }
         })
         .catch((error) => {
