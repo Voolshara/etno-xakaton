@@ -14,7 +14,7 @@
           :link="element['link']"
       /></swiper-slide>
     </swiper>
-    <hr>
+    <hr />
   </div>
 </template>
 <script>
@@ -30,11 +30,11 @@ export default {
   },
   data() {
     return {
-     carousel_data: [
+      carousel_data: [
         {
           img: "/img/chebocksary_king_city.png",
           name: "Чебоксары",
-          link: "cheboksary",
+          link: "cheboxary",
           description: "1",
         },
         {
@@ -52,13 +52,13 @@ export default {
         {
           img: "/img/saransk.png",
           name: "Саранск",
-          link: "Саранск",
+          link: "saransk",
           description: "4",
         },
         {
           img: "/img/esharala.png",
           name: "Йошкар-Ола",
-          link: "Йошкар-Ола",
+          link: "ola",
           description: "5",
         },
       ],
