@@ -43,7 +43,7 @@ export default {
         ],
         [
           "/img/members/gym/ВикторовнаСветлана.jpg",
-          "Викторовна Светлана",
+          "Светлана Викторовна",
           "defilee__div defilee__div--special2",
         ],
         [
@@ -83,7 +83,7 @@ export default {
         ],
         [
           "/img/members/gym/МурзинаЖанна.jpg",
-          "Мурзина Жанна",
+          "Мурзина Диана",
           "defilee__div defilee__div--special2",
         ],
         [
@@ -115,6 +115,11 @@ export default {
           "/img/members/gym/ХадиеваСофия.jpg",
           "Хадиева София",
           "defilee__div defilee__div--special3",
+        ],
+        [
+          "/img/members/gym/ШароваКарина.jpg",
+          "Шарова Карина",
+          "defilee__div defilee__div--special1",
         ],
       ],
     };
