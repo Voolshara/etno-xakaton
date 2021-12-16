@@ -72,7 +72,7 @@ export default {
         {
           img: "/img/saransk.png",
           name: "Саранск",
-          link: "Саранск",
+          link: "saransk",
           description: "4",
         },
         {
