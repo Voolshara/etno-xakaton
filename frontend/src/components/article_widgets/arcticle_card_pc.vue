@@ -234,6 +234,7 @@ export default {
       arcticle_data: [],
       is_error: false,
       is_chered: true,
+      name_city: 'Город',
       map: {
         kazan: [
           [56.139918, 47.247728],
@@ -341,6 +342,10 @@ export default {
             this.is_error = true;
           }
           this.arcticle_data = data;
+          document.title = data["name"];
+            this.name = data["name"];
+            this.parts = data["parts"];
+            this.is_load = false;у
         })
         .catch((error) => {
           console.error("Error:", error);
@@ -348,9 +353,9 @@ export default {
         });
     },
   },
+
   mounted() {
     this.get_data_for_article(this.$route.params.city);
-    document.title = "page title";
   },
   components: {
     CardPC,
