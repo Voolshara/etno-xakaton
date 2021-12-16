@@ -23,6 +23,62 @@
           allowfullscreen
         ></iframe>
       </div>
+      <div
+        v-if="this.$route.params.city == 'nizhny'"
+        style="margin: 0 -15px -5px -15px"
+      >
+        <iframe
+          width="100%"
+          height="650px"
+          src="https://www.youtube-nocookie.com/embed/vlvw5QJUEEE"
+          title="Нижний Новгород"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
+      <div
+        v-if="this.$route.params.city == 'Саранск'"
+        style="margin: 0 -15px -5px -15px"
+      >
+        <iframe
+          width="100%"
+          height="650px"
+          src="https://www.youtube-nocookie.com/embed/Uiv9W_xYWhc"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
+      <div
+        v-if="this.$route.params.city == 'Йошкар-Ола'"
+        style="margin: 0 -15px -5px -15px"
+      >
+        <iframe
+          width="100%"
+          height="650px"
+          src="https://www.youtube-nocookie.com/embed/T51KRdhiFfA"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
+      <div
+        v-if="this.$route.params.city == 'cheboxary'"
+        style="margin: 0 -15px -5px -15px"
+      >
+        <iframe
+          width="100%"
+          height="650px"
+          src="https://www.youtube-nocookie.com/embed/elkCYApyjtg"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
       <div class="information" v-for="el in parts" :key="el">
         <Element v-if="el['label'] != 'карта'" :data="el" />
         <Map
