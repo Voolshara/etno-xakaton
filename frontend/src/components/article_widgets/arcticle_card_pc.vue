@@ -1,6 +1,7 @@
 <template>
   <div>
-    <div v-if="is_error == true" class="error-code">404</div>
+    <div v-if="is_load"><Loader /></div>
+    <div v-else-if="is_error == true" class="error-code">404</div>
     <el-skeleton
       v-else-if="is_error == false && arcticle_data.length == 0"
       :rows="25"
@@ -227,6 +228,7 @@
 import { Swiper, SwiperSlide } from "swiper/vue";
 import "swiper/swiper.min.css";
 import CardPC from "@/components/article_widgets/article_card_pc_poca.vue";
+import Loader from "@/components/article_widgets/loader.vue";
 import Map from "@/components/article_widgets/map.vue";
 export default {
   data() {
@@ -234,7 +236,7 @@ export default {
       arcticle_data: [],
       is_error: false,
       is_chered: true,
-      name_city: 'Город',
+      name_city: "Город",
       map: {
         kazan: [
           [56.139918, 47.247728],
@@ -312,7 +314,7 @@ export default {
           [56.6300614, 47.8943319],
         ],
       },
-
+      is_load: true,
       lorem200:
         "lorem  perspiciatis quod aut ex. Fugiat obcaecat est vel vis! Recusandae numquam voluptatem deserunt ducimus dolorem harum esse reiciendis sequi ut beatae rerum sunt molestiae ipsum nihil ab nesciunt magnam nemo ea totam obcaecati assumenda praesentium, saepe, molestias illum! Nihil corporis quae, quisquam obcaecati architecto similique. Dolor impedit itaque minus veniam animi? Quibusdam ea recusandae velit non autem? Impedit, ipsa? Illo, impedit. Qui, perspiciatis vero iste accusamus assumenda nobis fuga nihil voluptate dolor distinctio! Saepe qui sequi ut aliquam, velit tempora ad ab cupiditate? At consequuntur quia unde quibusdam tenetur reprehenderit magni culpa, reiciendis asperiores temporibus deserunt suscipit magnam quidem saepe amet consectetur tempora autem harum doloremque recusandae nulla minus. Ullam!",
     };
@@ -342,9 +344,11 @@ export default {
           }
           this.arcticle_data = data;
           document.title = data["name"];
-            this.name = data["name"];
-            this.parts = data["parts"];
+          this.name = data["name"];
+          this.parts = data["parts"];
+          setTimeout(() => {
             this.is_load = false;
+          }, 1000);
         })
         .catch((error) => {
           console.error("Error:", error);
@@ -361,6 +365,7 @@ export default {
     Map,
     Swiper,
     SwiperSlide,
+    Loader,
   },
 };
 </script>
