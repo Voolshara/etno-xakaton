@@ -345,7 +345,7 @@ export default {
           document.title = data["name"];
             this.name = data["name"];
             this.parts = data["parts"];
-            this.is_load = false;у
+            this.is_load = false;
         })
         .catch((error) => {
           console.error("Error:", error);
