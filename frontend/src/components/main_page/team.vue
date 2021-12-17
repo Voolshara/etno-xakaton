@@ -87,6 +87,11 @@ export default {
           "defilee__div defilee__div--special2",
         ],
         [
+          "/img/members/gym/АфанасьеваСофья.JPG",
+          "Афанасьева София",
+          "defilee__div defilee__div--special4",
+        ],
+        [
           "/img/members/gym/НикитинаДарья.jpg",
           "Никитина Дарья",
           "defilee__div defilee__div--special1",
