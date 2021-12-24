@@ -1,6 +1,6 @@
 <template>
   <el-container id="app">
-    <el-header style="padding-bottom: 100px"><NavEl /></el-header>
+    <el-header class="main-container"><NavEl /></el-header>
     <el-main style="--el-main-padding: 15px" class="test">
       <BG class="background" />
       <router-view />
@@ -28,6 +28,19 @@ export default {
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 ::-webkit-scrollbar {
   width: 0;
+}
+@media screen and (max-width: 760px) {
+  .main-container{
+    margin-bottom: 100px;
+  }
+}
+@media screen and (width: 768px) {
+  .main-container{
+    margin-bottom: 20px;
+  }
+}
+.main-container {
+  padding-bottom: 100px;
 }
 #app {
   font-family: "Montserrat", sans-serif;
