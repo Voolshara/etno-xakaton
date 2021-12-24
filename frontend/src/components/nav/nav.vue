@@ -9,6 +9,10 @@
         style="width: 50px; height: 50px; padding-right: 10px"
         :src="'/img/sosh61.png'"
       ></el-image>
+      <el-image
+        style="width: 50px; height: 50px; padding-right: 10px"
+        :src="'/img/nac_project.png'"
+      ></el-image>
     </el-col>
     <el-col :span="12"
       ><router-link to="/" style="text-decoration: none; color: black"
