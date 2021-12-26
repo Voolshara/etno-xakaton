@@ -47,7 +47,7 @@
         ></iframe>
       </div>
       <div
-        v-if="this.$route.params.city == 'Саранск'"
+        v-if="this.$route.params.city == 'saransk'"
         style="margin: 0 -15px -5px -15px"
       >
         <iframe
