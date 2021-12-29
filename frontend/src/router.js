@@ -30,6 +30,11 @@ const routes = [{
         component: () =>
             import ("@/routes/school.vue"),
     },
+    {
+        path: "/events",
+        component: () =>
+            import ("@/routes/events.vue"),
+    },
 ];
 
 // 3. Create the router instance and pass the `routes` option
