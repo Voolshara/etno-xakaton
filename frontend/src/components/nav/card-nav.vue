@@ -44,6 +44,7 @@ export default {
         },
         { img: "/img/person.png", text: "О нас", link: "/about" },
         { img: "/img/book.png", text: "Наша школа", link: "/school" },
+        { img: "/img/event.png", text: "События", link: "/events" },
       ],
     };
   },
